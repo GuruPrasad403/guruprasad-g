@@ -51,7 +51,7 @@ export default function Hero() {
   e.preventDefault();
 
   // 1. Define the actual file path and the default saved file name
-  const filePath = "../../../reume/Guruprasad_G_Junior_softwar_engineer.pdf"; 
+  const filePath = "https://github.com/GuruPrasad403/guruprasad-g/blob/main/reume/Guruprasad_G_Junior_softwar_engineer.pdf"; 
   const fileName = "Chandu_Resume.pdf"; // Change extension if it is a .docx or image
 
   // 2. Create a temporary invisible link element
