@@ -28,26 +28,35 @@ export default function Navbar() {
       if (totalScroll > 0) {
         setScrollProgress((window.scrollY / totalScroll) * 100);
       }
-
-      // Active section detection
-      const scrollPosition = window.scrollY + 150;
-      const sections = navLinks.map(link => link.href.substring(1));
-      
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Precise IntersectionObserver for section highlighting
+    const sections = navLinks.map(link => link.href.substring(1));
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0
+    });
+
+    sections.forEach((sectionId) => {
+      const el = document.getElementById(sectionId);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -143,39 +152,70 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-full left-0 w-full bg-zinc-950 dark:bg-[#09090B] border-b border-zinc-200/5 dark:border-zinc-800/40 backdrop-blur-xl"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden fixed top-[65px] left-0 w-full h-[calc(100vh-65px)] bg-zinc-950/95 dark:bg-[#09090B]/95 backdrop-blur-2xl border-b border-zinc-800/50 z-50 overflow-y-auto"
           >
-            <div className="px-6 py-8 flex flex-col gap-4">
+            <div className="px-6 py-8 flex flex-col gap-3 min-h-full pb-20">
               {navLinks.map((link) => {
                 const isTargetActive = activeSection === link.href.substring(1);
                 return (
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`py-2 px-4 rounded-xl text-sm font-semibold tracking-wider uppercase transition-colors flex items-center justify-between ${
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileMenuOpen(false);
+                      const targetId = link.href.substring(1);
+                      const el = document.getElementById(targetId);
+                      if (el) {
+                        const offset = 80;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = el.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: "smooth"
+                        });
+                      }
+                    }}
+                    className={`py-3.5 px-5 rounded-2xl text-base font-bold tracking-wider uppercase transition-all flex items-center justify-between ${
                       isTargetActive
-                        ? "bg-blue-600/15 text-blue-400 border border-blue-500/20"
-                        : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                        ? "bg-blue-600/20 text-blue-400 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+                        : "text-zinc-400 hover:text-white bg-zinc-900/40 border border-zinc-800/40"
                     }`}
                   >
                     <span>{link.name}</span>
-                    <div className={`w-1.5 h-1.5 rounded-full ${isTargetActive ? "bg-blue-400" : "bg-transparent"}`} />
+                    <div className={`w-2 h-2 rounded-full ${isTargetActive ? "bg-blue-400 shadow-[0_0_8px_#60A5FA]" : "bg-zinc-800"}`} />
                   </a>
                 );
               })}
               <motion.a
                 href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center justify-center gap-1.5 transition-all"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileMenuOpen(false);
+                  const el = document.getElementById("contact");
+                  if (el) {
+                    const offset = 80;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = el.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth"
+                    });
+                  }
+                }}
+                className="mt-6 py-4 text-center text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-500 rounded-2xl flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(59,130,246,0.3)] transition-all"
                 whileTap={{ scale: 0.98 }}
               >
                 Hire Me
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-4 h-4" />
               </motion.a>
             </div>
           </motion.div>

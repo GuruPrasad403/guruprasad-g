@@ -142,7 +142,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     <section
       id="contact"
       ref={ref}
-      className="relative py-24 px-6 bg-[#09090B] border-t border-zinc-200/5 dark:border-zinc-800/20"
+      className="relative py-24 px-6 bg-transparent border-t border-zinc-200/10 dark:border-zinc-800/20"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}

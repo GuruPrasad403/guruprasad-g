@@ -12,10 +12,10 @@ import Footer from "../components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#09090B] overflow-x-hidden selection:bg-blue-500/20 selection:text-white">
+    <div className="relative min-h-screen bg-slate-50 dark:bg-[#09090B] text-slate-900 dark:text-white transition-colors duration-300 overflow-x-hidden selection:bg-blue-500/20 selection:text-white">
       {/* Immersive background grids and glow patterns */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.08),rgba(255,255,255,0))]" />
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       {/* Floating abstract structural circles */}
       <div className="absolute top-[10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />

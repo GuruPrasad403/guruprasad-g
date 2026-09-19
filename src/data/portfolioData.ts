@@ -31,59 +31,73 @@ export interface Certification {
   verificationUrl?: string;
 }
 
+export interface Hackathon {
+  id: string;
+  title: string;
+  location: string;
+  result: string;
+  prize?: string;
+  description: string;
+  image?: string;
+  videoUrl?: string;
+  githubUrl?: string;
+}
+
 export interface Education {
   institution: string;
   degree: string;
   period: string;
-  details: string[];
+  concurrentWork: string;
+  campusActivities: string;
+  hackathons: Hackathon[];
 }
 
 export const portfolioData = {
   personalInfo: {
     name: "Guruprasad G",
-    title: "Junior Software Engineer",
-    company: "Indegene",
+    title: "Software Engineer & AI Champion",
+    company: "Indegene Limited",
     email: "guruprasas27@gmail.com",
-    github: "https://github.com/guruprasad403",
-    linkedin: "https://www.linkedin.com/in/guruprasad-g-react/",
-    resumeUrl: "#",
-    location: "Bangalore, India",
-    bio: "Passionate Junior Software Engineer with a track record of building performant, scalable, and beautifully animated user interfaces. Specialized in modern frontend technologies, reusable UI architectures, and content management systems. Proven team contributor, quick learner, and dedicated Agile practitioner.",
+    phone: "+91 8951657957",
+    github: "https://github.com/GuruPrasad403",
+    linkedin: "https://guruprasad-g-one.vercel.app", // profile domain
+    resumeUrl: "/reume/Guruprasad_G.pdf",
+    location: "Ballari, Karnataka",
+    bio: "Software Engineer with professional experience at Indegene in enterprise web development, Adobe Experience Manager (AEM), and full-stack React/Node.js ecosystems. Converted from Apprentice to full-time Software Engineer based on performance. Appointed as AI Champion at Indegene, actively coordinating with cross-functional teams to discover workflows, recommend practical AI development tools (GitHub Copilot, ROVO), and mentor 30+ employees monthly to seamlessly integrate AI into their day-to-day engineering and business workflows.",
     yearsOfExperience: 1,
-    leadership: "Backup POD Lead at Indegene",
+    leadership: "AI Champion & SME Lead",
   },
   
   skills: [
     {
       category: "Frontend Development",
       skills: [
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 75 },
-        { name: "React", level: 75 },
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
+        { name: "React.js", level: 92 },
+        { name: "JavaScript (ES6+)", level: 95 },
+        { name: "TypeScript", level: 85 },
+        { name: "HTML5 & CSS3", level: 95 },
         { name: "Tailwind CSS", level: 90 },
+        { name: "Responsive Web Design", level: 95 },
       ]
     },
     {
-      category: "Backend & Services",
+      category: "Backend & Databases",
       skills: [
-        { name: "Node.js", level: 75 },
-        { name: "Express", level: 80 },
-        { name: "REST APIs", level: 85 },
-        { name: "JWT", level: 80 },
-        { name: "Socket.IO", level: 70 },
+        { name: "Node.js", level: 85 },
+        { name: "Express.js", level: 85 },
+        { name: "REST APIs", level: 90 },
+        { name: "MongoDB", level: 80 },
+        { name: "JWT Authentication", level: 85 },
       ]
     },
     {
-      category: "Databases & Tools",
+      category: "Enterprise & AI Tools",
       skills: [
-        { name: "MongoDB", level: 75 },
-        { name: "Git", level: 85 },
-        { name: "GitHub", level: 85 },
-        { name: "AEM (Adobe Experience Manager)", level: 80 },
-        { name: "Agile / Scrum", level: 80 },
-        { name: "Framer Motion", level: 85 },
+        { name: "Adobe Experience Manager (AEM)", level: 88 },
+        { name: "GitHub Copilot & ROVO", level: 95 },
+        { name: "Generative AI & NLP", level: 85 },
+        { name: "Git & GitHub", level: 90 },
+        { name: "UI Debugging & Code Quality", level: 90 },
       ]
     }
   ] as SkillGroup[],
@@ -91,26 +105,36 @@ export const portfolioData = {
   experience: [
     {
       id: "exp1",
-      company: "Indegene",
-      role: "Junior Software Engineer",
-      period: "Jul 2024 - Present",
+      company: "Indegene Limited",
+      role: "Web Developer & AI Champion",
+      period: "Sep 2025 – Present",
       achievements: [
-        "Developed, optimized, and maintained highly reusable  components and frontend templates, reducing visual regressions across key projects.",
-        "Engineered customized workflows and components within Adobe Experience Manager (AEM), enabling marketing teams to deliver content 30% faster.",
-        "Guaranteed pixel-perfect, cross-browser compatibility and responsive design, resolving high-priority rendering and performance bottlenecks.",
-        "Proactively identified, debugged, and resolved critical production issues, improving application stability and user satisfaction metrics.",
-        "Actively participated in  sprint planning and daily stand-ups to align engineering tasks with dynamic product requirements.",
-        "Contributed to rigorous peer code reviews, ensuring high standards of code readability, safety, and adherence to company patterns.",
+        "Converted from Web Developer Apprentice/Trainee to full-time Software Engineer at Indegene based on exceptional performance.",
+        "Develop and maintain responsive web pages, splash pages, HCP portals, and reusable components using HTML5, CSS3, JavaScript, and React.",
+        "Build and update enterprise web experiences on Adobe Experience Manager (AEM), following CMS workflows and strict implementation standards.",
+        "Appointed as AI Champion alongside regular project responsibilities, engaging with groups of 30+ employees each month to understand workflows and identify AI use cases.",
+        "Recommend relevant AI tools (GitHub Copilot, ROVO) and workflow improvements to help employees perform tasks more efficiently.",
+        "Troubleshoot front-end rendering issues, review implementation details, and coordinate cross-departmental enablement."
       ]
     },
     {
       id: "exp2",
-      company: "Digitide Solutions",
-      role: "Customer Care Executive",
-      period: "Oct 2022 - Jun 2024",
+      company: "Digitide Solutions Limited",
+      role: "Customer Care Executive → Subject Matter Expert (SME)",
+      period: "Jun 2024 – Sep 2025",
       achievements: [
-        "Delivered premium customer support and engagement, building strong, trusted relationships with critical enterprise and SME clients.",
-        "Spearheaded SME promotion activities, elevating regional business exposure and driving strategic outreach initiatives."
+        "Resolved 50+ customer queries per day while maintaining a 95% customer satisfaction rating.",
+        "Promoted to Subject Matter Expert (SME) within three months based on outstanding performance and deep product knowledge.",
+        "Mentored four training batches involving 50+ trainees and supported a 100% first-attempt certification pass rate."
+      ]
+    },
+    {
+      id: "exp3",
+      company: "Aptpath",
+      role: "AI-Powered Health Assistant Intern",
+      period: "Nov 2024",
+      achievements: [
+        "Developed CareBot using Python and Generative AI for intelligent medical query processing and context-aware responses."
       ]
     }
   ] as Experience[],
@@ -118,16 +142,16 @@ export const portfolioData = {
   projects: [
     {
       id: "second-brain",
-      title: "Second Brain Space",
-      description: "A premium, personal knowledge management dashboard that lets users link thoughts, store files, organize tasks, and query their mind using an interactive canvas mapping.",
-      longDescription: "Second Brain Space is a comprehensive, client-side offline-first productivity workspace. It features bidirectional document linking, a dynamic node-graph visualization of notes, task progress bars, and localized storage. Built specifically with ultra-smooth layouts and high-performance list processing, it enables seamless indexing of personal projects, code snippets, and design cards.",
+      title: "Second Brain – AI PWA",
+      description: "A full-stack progressive web application for saving, organizing, and semantically searching documents using NLP techniques.",
+      longDescription: "Second Brain is a full-stack progressive web app built for organizing personal knowledge and notes. Features tag-based categorization, REST APIs, authentication workflows, and semantic search powered by natural language processing.",
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-      techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "lucide-react"],
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "TypeScript", "NLP"],
       features: [
-        "Interactive node graph visualizer of interconnected markdown notes",
-        "Rich text editor with syntax highlighting and bidirectional linking",
-        "Command Palette interface (Cmd+K) for lightning-fast search and operations",
-        "Draggable task board with kanban lists and focus-mode Pomodoro timer"
+        "Semantic document search using NLP techniques",
+        "Tag-based categorization and quick filtering",
+        "Secure user authentication with RESTful APIs",
+        "Offline-first PWA architecture"
       ],
       githubUrl: "https://github.com/GuruPrasad403/brainly",
       liveUrl: "https://brainly-puce.vercel.app/"
@@ -135,31 +159,31 @@ export const portfolioData = {
     {
       id: "expense-tracker",
       title: "WealthFlow Expense Tracker",
-      description: "An elegant, high-performance financial analytics and budgeting app with real-time charts, custom category tracking, and predictive budget forecasting.",
-      longDescription: "WealthFlow reimagines personal finance with beautiful micro-interactions, responsive charts, and strict privacy. It parses financial metrics locally, generates interactive SVG reports, and tracks monthly budgets in highly customized category clusters. The interface utilizes pristine negative space and premium glass card frames to prevent structural clutter.",
+      description: "A full-stack finance application with CRUD operations, budget calculations, and interactive data visualization.",
+      longDescription: "WealthFlow is a responsive finance application featuring MongoDB persistence, JWT authentication, and mobile-first layouts using CSS3 and Flexbox. Helps users calculate budgets and track expenses visually.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      techStack: ["React", "Tailwind CSS", "Framer Motion", "Recharts"],
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT Auth", "CSS3 Flexbox"],
       features: [
-        "Interactive analytics charts tracking monthly income, savings, and investments",
-        "Dynamic recurring transaction scheduler and multi-currency exchange rates",
-        "One-click PDF/CSV statement generator and export options",
-        "Budget-limit alerts and progressive notification card system"
+        "CRUD operations for income and expense logs",
+        "JWT-authenticated user sessions",
+        "Interactive budget calculation graphs",
+        "Mobile-first responsive design"
       ],
       githubUrl: "https://github.com/GuruPrasad403/tracker-ui",
       liveUrl: "https://tracker-ui-woad.vercel.app/"
     },
     {
       id: "carebot",
-      title: "CareBot Assistant",
-      description: "An intelligent healthcare support agent providing prompt response matching, wellness suggestions, and symptom mapping using natural language processing.",
-      longDescription: "CareBot is an elegant healthcare triage and support interface. It provides users with rapid symptom mapping, wellness checklists, and localized resource finders. Built with a robust conversational interface that emphasizes clear typography, screen-reader accessibility, and dark/light ambient adjustments.",
+      title: "CareBot – AI Medical Assistant",
+      description: "An AI-powered chatbot for medical query processing, context-aware responses, and resource recommendations.",
+      longDescription: "CareBot processes health queries using Natural Language Processing and Generative AI, delivering context-aware medical information and smart resource recommendations.",
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
-      techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "lucide-react"],
+      techStack: ["Python", "NLP", "Generative AI"],
       features: [
-        "Symptom tracking check-ins with clear, accessible UI workflows",
-        "Secure local-first chat history storage and export tools",
-        "Comprehensive health guides catalog and interactive dosage planner",
-        "Low-latency response system with custom loading indicators and speech-to-text"
+        "Context-aware medical query processing",
+        "Generative AI response generation",
+        "NLP-based intent detection and classification",
+        "Intelligent health resource recommendations"
       ],
       githubUrl: "https://github.com/GuruPrasad403/chat-bot",
       liveUrl: "#"
@@ -167,24 +191,55 @@ export const portfolioData = {
   ] as Project[],
 
   certifications: [
-    
     {
       id: "cert1",
-      title: "Full Stack Developer",
-      issuer: "100x Devs",
+      title: "Full Stack Developer Certification",
+      issuer: "100xDevs",
       date: "2024"
     },
-    
+    {
+      id: "cert2",
+      title: "AI Champion Enablement",
+      issuer: "Indegene Limited",
+      date: "2025"
+    }
   ] as Certification[],
 
   education: {
-    institution: "Vijayanagara Sri Krishnadevaraya University",
-    degree: "Bachelor of Computer Applications",
-    period: "2022 - 2025",
-    details: [
-      "Graduated with First Class Distinction.",
-      "Core coursework in Data Structures, Web Technology, Software Engineering, and Database Management Systems.",
-      "Completed a Capstone Project on web-based diagnostic assistant using cloud resources."
+    institution: "Shree Medha Degree College (VSKU)",
+    degree: "Bachelor of Computer Applications (BCA)",
+    period: "2022 – 2025",
+    concurrentWork: "During BCA, joined as a full-time Customer Care Executive (CCE) at Digitide Solutions, balancing full-time professional industry responsibilities alongside full-time degree coursework.",
+    campusActivities: "Actively organized and participated in college events, coordinating seamlessly with classmates, faculty, and guest speakers.",
+    hackathons: [
+      {
+        id: "hack1",
+        title: "HACKB24 Inter-College Hackathon",
+        location: "BITM College, Ballari",
+        result: "2nd Runner Up (3rd Place)",
+        prize: "₹10,000 Cash Prize",
+        description: "Engineered a high-performance frontend architecture under strict hackathon deadlines, winning 2nd Runner Up against competitive teams.",
+        image: "/images/hackathon_runnerup.jpg",
+        githubUrl: "https://github.com/GuruPrasad403/SYC/tree/final/frontend"
+      },
+      {
+        id: "hack2",
+        title: "0 to 100 Online Global Hackathon",
+        location: "Virtual / Remote",
+        result: "Participant & Platform Builder",
+        description: "Developed a full-fledged web platform prototype. Successfully showcased project architecture via video demonstration.",
+        image: "/images/online_hackathon.jpg",
+        videoUrl: "https://drive.google.com/file/d/1apOVKJo9psfQpZHeILxfTpNUOUb3WeZ4/view?usp=sharing"
+      },
+      {
+        id: "hack3",
+        title: "BGSCET National Level Hackathon",
+        location: "BGS College of Engineering and Technology, Bengaluru",
+        result: "National Level Participant & Vidyaloop Builder",
+        description: "Engineered 'Vidyaloop' at BGSCET National Hackathon—an interactive educational platform enabling teachers to upload video lectures paired with automated transcripts.",
+        image: "/images/vidyaloop_hack.jpg",
+        githubUrl: "https://github.com/pittiprince/Vidyaloop_hack"
+      }
     ]
   } as Education
 };

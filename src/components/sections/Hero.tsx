@@ -4,10 +4,10 @@ import { motion } from "motion/react";
 import { portfolioData } from "../../data/portfolioData";
 
 const roles = [
-  "Junior Software Engineer",
-  "React & TypeScript Dev",
-  "AEM Specialist",
-  "UI/UX Enthusiast"
+  "Software Engineer",
+  "Web Developer & AI Champion",
+  "React.js & Node.js Dev",
+  "AEM Platform Specialist"
 ];
 
 export default function Hero() {
@@ -48,31 +48,20 @@ export default function Hero() {
   }, [roleText, isDeleting, roleIndex, typingSpeed]);
 
   const handleDownloadResume = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
-  e.preventDefault();
-
-  // 1. Define the actual file path and the default saved file name
-  const filePath = "https://github.com/GuruPrasad403/guruprasad-g/blob/main/reume/Guruprasad_G_Junior_softwar_engineer.pdf"; 
-  const fileName = "Chandu_Resume.pdf"; // Change extension if it is a .docx or image
-
-  // 2. Create a temporary invisible link element
-  const link = document.createElement('a');
-  link.style.display = 'none';
-  link.href = filePath;
-  
-  // 3. Force the browser to download instead of opening
-  link.setAttribute('download', fileName);
-  
-  // 4. Append, trigger click, and clean up the DOM
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = '/reume/Guruprasad_G.pdf';
+    link.setAttribute('download', 'Guruprasad_G_Resume.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-[#09090B]"
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-transparent"
     >
       {/* Immersive Floating Background Blobs with Smooth Swaying Motion */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

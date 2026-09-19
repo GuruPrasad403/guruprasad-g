@@ -34,7 +34,7 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="relative py-24 px-6 bg-[#09090B] border-t border-zinc-200/5 dark:border-zinc-800/20"
+      className="relative py-24 px-6 bg-transparent border-t border-zinc-200/10 dark:border-zinc-800/20"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
@@ -59,16 +59,16 @@ export default function About() {
               variants={itemVariants}
               className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans"
             >
-              I am a driven software engineer with a track record of building performant, scalable, and beautifully animated user interfaces. Specialized in modern frontend technologies, reusable UI architectures, and content management systems. Proven team contributor, quick learner, and dedicated Agile practitioner.
+              {portfolioData.personalInfo.bio}
             </motion.p>
             <motion.p
               variants={itemVariants}
               className="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed"
             >
-              My professional journey began in customer engagement and strategic SME promotion, equipping me with exceptional communication skills, client empathy, and product positioning. Transitioning into core software engineering, I now build high-quality web applications at Indegene.
+              Beyond core software engineering in React.js, AEM, and Node.js, I take pride in bridging AI tools with day-to-day work tasks. As an appointed <strong className="text-blue-500 dark:text-blue-400 font-semibold">AI Champion at Indegene</strong>, I closely collaborate with team leads and team members to analyze daily operational friction points, recommend tailored AI solutions (GitHub Copilot, ROVO), and streamline access and permissions across internal departments.
             </motion.p>
 
-            {/* Leadership Spotlight Card */}
+            {/* AI Champion Leadership Spotlight Card */}
             <motion.div
               variants={itemVariants}
               className="p-6 rounded-2xl bg-zinc-100/50 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative overflow-hidden"
@@ -76,22 +76,22 @@ export default function About() {
               {/* Subtle background glow */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
               
-              <div  iv className="flex items-start gap-4">
+              <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-500 shrink-0">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-  <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-2 flex items-center gap-1.5 font-mono">
-    Professional Growth
-  </h3>
-  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-    I began my journey at <strong className="text-blue-400">Indegene</strong> as a <strong className="text-blue-400">Web Developer Trainee</strong>, where I rapidly expanded my technical expertise in  JavaScript, Adobe Experience Manager (AEM), and enterprise web development. By taking ownership of complex projects, resolving critical production issues, and consistently delivering high-quality solutions, I earned recognition from senior management through a performance award for my dedication, problem-solving skills, and continuous growth.
-  </p>
-</div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-2 flex items-center gap-1.5 font-mono">
+                    AI Champion &amp; Team Enablement
+                  </h3>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                    Appointed as <strong className="text-blue-500 dark:text-blue-400">AI Champion</strong> at Indegene alongside core Web Development responsibilities. Engaged monthly with groups of <strong className="text-blue-500 dark:text-blue-400">30+ employees</strong> to evaluate daily workflows, conduct AI tool demonstrations, match practical Copilot/ROVO capabilities to engineering tasks, and coordinate permissions with IT to drive measurable efficiency gains across the organization.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
-            {/* Passion Callout */}
+            {/* Professional Growth Callout */}
             <motion.div
               variants={itemVariants}
               className="p-6 rounded-2xl bg-zinc-100/50 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative overflow-hidden"
@@ -103,10 +103,10 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-2 flex items-center gap-1.5 font-mono">
-                    Engineering Passions
+                    Career Milestone &amp; Ownership
                   </h3>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                    I thrive on the intersection of design precision and system performance. I enjoy creating pixel-perfect user experiences using <strong className="text-cyan-400">Tailwind CSS and Framer Motion</strong>, maintaining absolute modularity, and tackling core browser optimization issues.
+                    Successfully converted from <strong className="text-cyan-500 dark:text-cyan-400">Web Developer Apprentice/Trainee to full-time Software Engineer</strong> at Indegene through consistent quality output, rapid debugging, enterprise AEM component delivery, and strong peer collaboration.
                   </p>
                 </div>
               </div>
