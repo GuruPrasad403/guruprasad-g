@@ -60,7 +60,7 @@ export const portfolioData = {
     email: "guruprasas27@gmail.com",
     phone: "+91 8951657957",
     github: "https://github.com/GuruPrasad403",
-    linkedin: "https://guruprasad-g-one.vercel.app", // profile domain
+    linkedin: "https://www.linkedin.com/in/guruprasad-g-react/", // profile domain
     resumeUrl: "/reume/Guruprasad_G.pdf",
     location: "Ballari, Karnataka",
     bio: "Software Engineer with professional experience at Indegene in enterprise web development, Adobe Experience Manager (AEM), and full-stack React/Node.js ecosystems. Converted from Apprentice to full-time Software Engineer based on performance. Appointed as AI Champion at Indegene, actively coordinating with cross-functional teams to discover workflows, recommend practical AI development tools (GitHub Copilot, ROVO), and mentor 30+ employees monthly to seamlessly integrate AI into their day-to-day engineering and business workflows.",
