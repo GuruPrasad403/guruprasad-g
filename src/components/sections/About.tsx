@@ -13,7 +13,7 @@ export default function About() {
     { label: "Years of Experience", value: `${portfolioData.personalInfo.yearsOfExperience}+`, icon: Calendar },
     { label: "Current Company", value: portfolioData.personalInfo.company, icon: Briefcase },
     { label: "Leadership Role", value: "Backup POD Lead", icon: Award },
-    { label: "Primary Field", value: "Computer Science", icon: GraduationCap },
+    { label: "Primary Field", value: "Computer Applications (BCA)", icon: GraduationCap },
   ];
 
   const containerVariants = {
@@ -106,7 +106,7 @@ export default function About() {
                     Career Milestone &amp; Ownership
                   </h3>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                    Successfully converted from <strong className="text-cyan-500 dark:text-cyan-400">Web Developer Apprentice/Trainee to full-time Software Engineer</strong> at Indegene through consistent quality output, rapid debugging, enterprise AEM component delivery, and strong peer collaboration.
+                    Successfully converted from <strong className="text-cyan-500 dark:text-cyan-400">Web Developer Apprentice/Trainee to full-time Web Developer Trainee</strong> at Indegene through consistent quality output, rapid debugging, enterprise AEM component delivery, and strong peer collaboration.
                   </p>
                 </div>
               </div>

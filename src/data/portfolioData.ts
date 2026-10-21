@@ -55,7 +55,7 @@ export interface Education {
 export const portfolioData = {
   personalInfo: {
     name: "Guruprasad G",
-    title: "Software Engineer & AI Champion",
+    title: "Web Developer Trainee",
     company: "Indegene Limited",
     email: "guruprasas27@gmail.com",
     phone: "+91 8951657957",
@@ -63,7 +63,7 @@ export const portfolioData = {
     linkedin: "https://www.linkedin.com/in/guruprasad-g-react/", // profile domain
     resumeUrl: "/reume/Guruprasad_G.pdf",
     location: "Ballari, Karnataka",
-    bio: "Software Engineer with professional experience at Indegene in enterprise web development, Adobe Experience Manager (AEM), and full-stack React/Node.js ecosystems. Converted from Apprentice to full-time Software Engineer based on performance. Appointed as AI Champion at Indegene, actively coordinating with cross-functional teams to discover workflows, recommend practical AI development tools (GitHub Copilot, ROVO), and mentor 30+ employees monthly to seamlessly integrate AI into their day-to-day engineering and business workflows.",
+    bio: "Web Developer Trainee at Indegene Limited with professional experience in enterprise web development, Adobe Experience Manager (AEM), and full-stack React/Node.js ecosystems. Joined as a Web Developer Apprentice/Trainee in Sep 2025 and moved to a full-time Web Developer Trainee role in Sep 2026. Appointed as AI Champion at Indegene, actively coordinating with cross-functional teams to discover workflows, recommend practical AI development tools (GitHub Copilot, ROVO), and mentor 30+ employees monthly to seamlessly integrate AI into their day-to-day engineering and business workflows.",
     yearsOfExperience: 1,
     leadership: "AI Champion & SME Lead",
   },
@@ -106,10 +106,10 @@ export const portfolioData = {
     {
       id: "exp1",
       company: "Indegene Limited",
-      role: "Web Developer & AI Champion",
+      role: "Web Developer Trainee",
       period: "Sep 2025 – Present",
       achievements: [
-        "Converted from Web Developer Apprentice/Trainee to full-time Software Engineer at Indegene based on exceptional performance.",
+        "Moved from Web Developer Apprentice/Trainee (Sep 2025 – Sep 2026) to a full-time Web Developer Trainee role at Indegene in Sep 2026.",
         "Develop and maintain responsive web pages, splash pages, HCP portals, and reusable components using HTML5, CSS3, JavaScript, and React.",
         "Build and update enterprise web experiences on Adobe Experience Manager (AEM), following CMS workflows and strict implementation standards.",
         "Appointed as AI Champion alongside regular project responsibilities, engaging with groups of 30+ employees each month to understand workflows and identify AI use cases.",
@@ -120,12 +120,21 @@ export const portfolioData = {
     {
       id: "exp2",
       company: "Digitide Solutions Limited",
-      role: "Customer Care Executive → Subject Matter Expert (SME)",
+      role: "Customer Care Executive-Operations",
       period: "Jun 2024 – Sep 2025",
       achievements: [
         "Resolved 50+ customer queries per day while maintaining a 95% customer satisfaction rating.",
         "Promoted to Subject Matter Expert (SME) within three months based on outstanding performance and deep product knowledge.",
         "Mentored four training batches involving 50+ trainees and supported a 100% first-attempt certification pass rate."
+      ]
+    },
+    {
+      id: "exp4",
+      company: "trendypaper.com",
+      role: "Backend Operation",
+      period: "Jun 2023 – Mar 2025",
+      achievements: [
+        "Worked part-time on backend operations at trendypaper.com."
       ]
     },
     {
@@ -206,10 +215,10 @@ export const portfolioData = {
   ] as Certification[],
 
   education: {
-    institution: "Shree Medha Degree College (VSKU)",
+    institution: "Shree Medha College, Sri Krishnadevaraya University",
     degree: "Bachelor of Computer Applications (BCA)",
     period: "2022 – 2025",
-    concurrentWork: "During BCA, joined as a full-time Customer Care Executive (CCE) at Digitide Solutions, balancing full-time professional industry responsibilities alongside full-time degree coursework.",
+    concurrentWork: "During BCA, joined as a full-time Customer Care Executive-Operations at Digitide Solutions Limited, balancing full-time professional industry responsibilities alongside full-time degree coursework.",
     campusActivities: "Actively organized and participated in college events, coordinating seamlessly with classmates, faculty, and guest speakers.",
     hackathons: [
       {

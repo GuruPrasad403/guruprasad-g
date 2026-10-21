@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 import { portfolioData } from "../../data/portfolioData";
 
 const roles = [
-  "Software Engineer",
-  "Web Developer & AI Champion",
+  "Web Developer Trainee",
+  "Web Developer Trainee at Indegene",
   "React.js & Node.js Dev",
   "AEM Platform Specialist"
 ];

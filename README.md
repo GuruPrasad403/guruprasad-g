@@ -1,6 +1,6 @@
-# Guruprasad G • Senior Staff Engineering Portfolio
+# Guruprasad G • Web Developer Trainee Portfolio
 
-An absolute premium, world-class personal portfolio engineered for Software Engineers. Designed with a clinical slate cyber-aesthetic, boasting rich motion orchestrations, custom hardware cursor trails, responsive glassmorphism, and optimized SMTP delivery workflows.
+A personal portfolio for Guruprasad G, Web Developer Trainee at Indegene Limited. Designed with a clinical slate cyber-aesthetic, boasting rich motion orchestrations, custom hardware cursor trails, responsive glassmorphism, and optimized SMTP delivery workflows.
 
 ---
 

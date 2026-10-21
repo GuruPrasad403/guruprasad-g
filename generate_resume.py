@@ -98,7 +98,7 @@ story = []
 # 1. Header Section
 story.append(Paragraph('GURUPRASAD G', name_style))
 story.append(Spacer(1, 2))
-story.append(Paragraph('Software Engineer | Frontend Developer | Full-Stack Developer', sub_title_style))
+story.append(Paragraph('Web Developer Trainee | Frontend Developer | Full-Stack Developer', sub_title_style))
 story.append(Spacer(1, 2))
 contact_line = '+91 8951657957 &nbsp;|&nbsp; guruprasas27@gmail.com &nbsp;|&nbsp; Ballari, Karnataka &nbsp;|&nbsp; github.com/GuruPrasad403 &nbsp;|&nbsp; guruprasad-g-one.vercel.app'
 story.append(Paragraph(contact_line, contact_style))
@@ -118,8 +118,8 @@ def make_sec_header(title):
 # 2. Professional Summary
 story.extend(make_sec_header('Professional Summary'))
 summary_text = (
-    "Software Engineer with professional experience at <b>Indegene</b> in enterprise web development, Adobe Experience Manager (AEM), "
-    "and full-stack React/Node.js ecosystems. Converted from Apprentice to full-time Software Engineer. Appointed as <b>AI Champion</b> "
+    "Web Developer Trainee with professional experience at <b>Indegene</b> in enterprise web development, Adobe Experience Manager (AEM), "
+    "and full-stack React/Node.js ecosystems. Joined as Apprentice/Trainee in Sep 2025 and moved to a full-time Web Developer Trainee role in Sep 2026. Appointed as <b>AI Champion</b> "
     "at Indegene, driving AI tool adoption (GitHub Copilot, ROVO) across 30+ team members to enhance engineering workflows. "
     "Hands-on experience building performant applications using React.js, TypeScript, Node.js, Express, MongoDB, REST APIs, JWT authentication, and NLP techniques."
 )
@@ -151,7 +151,7 @@ story.extend(make_sec_header('Professional Experience'))
 
 # Indegene
 exp1_header = [
-    [Paragraph('<b>Web Developer &amp; AI Champion</b> | Indegene Limited', bold_label), Paragraph('<font color="#2563EB"><b>Sep 2025 – Present</b></font>', ParagraphStyle('RAlign', parent=bold_label, alignment=2))]
+    [Paragraph('<b>Web Developer Trainee</b> | Indegene Limited', bold_label), Paragraph('<font color="#2563EB"><b>Sep 2025 – Present</b></font>', ParagraphStyle('RAlign', parent=bold_label, alignment=2))]
 ]
 t_exp1 = Table(exp1_header, colWidths=[380, 160])
 t_exp1.setStyle(TableStyle([('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0)]))
@@ -159,7 +159,7 @@ story.append(t_exp1)
 story.append(Spacer(1, 2))
 
 bullets_exp1 = [
-    "Converted from Web Developer Apprentice/Trainee to full-time Software Engineer at Indegene based on performance.",
+    "Moved from Web Developer Apprentice/Trainee to a full-time Web Developer Trainee role at Indegene in Sep 2026, based on performance.",
     "Develop responsive web pages, splash pages, HCP portals, and reusable components using HTML5, CSS3, JavaScript, and React.",
     "Build and maintain enterprise web experiences on Adobe Experience Manager (AEM), adhering to strict CMS workflows.",
     "Appointed as AI Champion alongside core engineering duties; guide 30+ employees monthly in discovering AI use cases with Copilot &amp; ROVO.",
@@ -171,7 +171,7 @@ story.append(Spacer(1, 4))
 
 # Digitide Solutions
 exp2_header = [
-    [Paragraph('<b>Customer Care Executive → SME</b> | Digitide Solutions Limited', bold_label), Paragraph('<font color="#2563EB"><b>Jun 2024 – Sep 2025</b></font>', ParagraphStyle('RAlign2', parent=bold_label, alignment=2))]
+    [Paragraph('<b>Customer Care Executive-Operations</b> | Digitide Solutions Limited', bold_label), Paragraph('<font color="#2563EB"><b>Jun 2024 – Sep 2025</b></font>', ParagraphStyle('RAlign2', parent=bold_label, alignment=2))]
 ]
 t_exp2 = Table(exp2_header, colWidths=[380, 160])
 t_exp2.setStyle(TableStyle([('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0)]))
@@ -208,7 +208,7 @@ story.append(Spacer(1, 5))
 story.extend(make_sec_header('Education &amp; Key Achievements'))
 edu_grid = [
     [
-        Paragraph('<b>Bachelor of Computer Applications (BCA)</b><br/>Shree Medha Degree College (VSKU) | <font color="#475569">2022 – 2025</font><br/>• Concurrent Full-Time CCE at Digitide Solutions during BCA<br/>• Coordinated campus events with peers and faculty', body_style),
+        Paragraph('<b>Bachelor of Computer Applications (BCA)</b><br/>Shree Medha College, Sri Krishnadevaraya University | <font color="#475569">2022 – 2025</font><br/>• Concurrent Full-Time Customer Care Executive-Operations at Digitide Solutions Limited during BCA<br/>• Coordinated campus events with peers and faculty', body_style),
         Paragraph('<b>Hackathons &amp; Certifications:</b><br/>• 2nd Runner Up (₹10,000 Prize) - HACKB24 (BITM)<br/>• Vidyaloop Creator - BGSCET National Level Hackathon<br/>• 0-to-100 Online Hackathon Platform Builder<br/>• Full Stack Developer Certification (100xDevs)', body_style)
     ]
 ]

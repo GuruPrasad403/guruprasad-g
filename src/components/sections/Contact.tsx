@@ -163,7 +163,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 Let's discuss your next project, integration, or opening.
               </h3>
               <p className="text-sm text-zinc-400 leading-relaxed font-sans">
-                I am actively open to Junior Software Engineer openings, contract sprints, or full-stack engineering collaborations. Drop me a line, and let's get building.
+                I am actively open to Web Developer, Full-Stack Developer, Frontend Developer and Node.js openings, contract sprints, or full-stack engineering collaborations. Drop me a line, and let's get building.
               </p>
             </div>
 
@@ -283,7 +283,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${
                     errors.subject ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-blue-500"
                   }`}
-                  placeholder="Opportunity: Software Engineer Role"
+                  placeholder="Opportunity: Web Developer Role"
                 />
                 {errors.subject && (
                   <span className="text-[10px] font-semibold text-red-500 tracking-wide font-mono block">
