@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guruprasad-g-one.vercel.app/sitemap.xml
