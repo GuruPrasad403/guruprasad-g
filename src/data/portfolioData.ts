@@ -1,3 +1,5 @@
+import { sparkCertificateDataUri } from "../assets/sparkCertificate";
+
 export interface Project {
   id: string;
   title: string;
@@ -29,6 +31,7 @@ export interface Certification {
   issuer: string;
   date: string;
   verificationUrl?: string;
+  image?: string;
 }
 
 export interface Hackathon {
@@ -217,7 +220,7 @@ export const portfolioData = {
       title: "SPARK — Ignite Excellence (InTheGene Award)",
       issuer: "Indegene Limited",
       date: "29 Sep 2026",
-      image: "/certificates/spark-inthegene-certificate.png"
+      image: sparkCertificateDataUri
     }
   ] as Certification[],
 
