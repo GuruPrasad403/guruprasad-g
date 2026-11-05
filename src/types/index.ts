@@ -34,6 +34,7 @@ export interface Certification {
   issuer: string;
   date: string;
   verificationUrl?: string;
+  image?: string;
 }
 
 export interface Education {

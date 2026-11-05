@@ -211,6 +211,13 @@ export const portfolioData = {
       title: "AI Champion Enablement",
       issuer: "Indegene Limited",
       date: "2025"
+    },
+    {
+      id: "cert3",
+      title: "SPARK — Ignite Excellence (InTheGene Award)",
+      issuer: "Indegene Limited",
+      date: "29 Sep 2026",
+      image: "/certificates/spark-inthegene-certificate.png"
     }
   ] as Certification[],
 

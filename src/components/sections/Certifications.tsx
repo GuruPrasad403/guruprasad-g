@@ -58,6 +58,22 @@ export default function Certifications() {
               className="p-6 rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative group overflow-hidden hover:border-blue-500/20 dark:hover:border-blue-500/20 transition-all duration-300"
               whileHover={{ y: -3 }}
             >
+              {cert.image && (
+                <a
+                  href={cert.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block mb-4 rounded-xl overflow-hidden border border-zinc-200/20 dark:border-zinc-800/80"
+                  title="View certificate"
+                >
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </a>
+              )}
               <div className="flex items-start gap-4">
                 {/* Icon wrapper */}
                 <div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 group-hover:bg-blue-500/20 transition-all duration-300">
