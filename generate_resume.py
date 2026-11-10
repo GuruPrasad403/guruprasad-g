@@ -98,7 +98,7 @@ story = []
 # 1. Header Section
 story.append(Paragraph('GURUPRASAD G', name_style))
 story.append(Spacer(1, 2))
-story.append(Paragraph('Web Developer Trainee | Frontend Developer | Full-Stack Developer', sub_title_style))
+story.append(Paragraph('React Developer | Full-Stack JavaScript Developer (MERN)', sub_title_style))
 story.append(Spacer(1, 2))
 contact_line = '+91 8951657957 &nbsp;|&nbsp; guruprasas27@gmail.com &nbsp;|&nbsp; Ballari, Karnataka &nbsp;|&nbsp; github.com/GuruPrasad403 &nbsp;|&nbsp; guruprasad-g-one.vercel.app'
 story.append(Paragraph(contact_line, contact_style))
@@ -118,8 +118,8 @@ def make_sec_header(title):
 # 2. Professional Summary
 story.extend(make_sec_header('Professional Summary'))
 summary_text = (
-    "Web Developer Trainee with professional experience at <b>Indegene</b> in enterprise web development, Adobe Experience Manager (AEM), "
-    "and full-stack React/Node.js ecosystems. Joined as Apprentice/Trainee in Sep 2025 and moved to a full-time Web Developer Trainee role in Sep 2026. Appointed as <b>AI Champion</b> "
+    "React and full-stack JavaScript developer with production experience delivering responsive web pages, HCP portals, and reusable "
+    "Adobe Experience Manager components at <b>Indegene</b>. Joined as Apprentice/Trainee in Sep 2025 and moved to a full-time Web Developer Trainee role in Sep 2026. Appointed as <b>AI Champion</b> "
     "at Indegene, driving AI tool adoption (GitHub Copilot, ROVO) across 30+ team members to enhance engineering workflows. "
     "Hands-on experience building performant applications using React.js, TypeScript, Node.js, Express, MongoDB, REST APIs, JWT authentication, and NLP techniques."
 )
