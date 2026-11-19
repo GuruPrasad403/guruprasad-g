@@ -24,14 +24,14 @@
   }
 
   body {
-    @apply bg-[#060a13] text-white;
+    @apply bg-[#05050c] text-white;
     font-family: var(--font-sans);
     overflow-x: hidden;
   }
 
   /* Selection styling */
   ::selection {
-    background-color: rgba(245, 158, 11, 0.25);
+    background-color: rgba(139, 92, 246, 0.25);
     color: #FFFFFF;
   }
 }
@@ -42,17 +42,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #060a13;
+  background: #05050c;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1c2536;
+  background: #2a2145;
   border-radius: 9999px;
   border: 2px solid #09090B;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #F59E0B;
+  background: #8B5CF6;
 }
 
 /* Glassmorphism */
@@ -78,7 +78,7 @@
 }
 
 .text-gradient-primary {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  background: linear-gradient(120deg, #A78BFA 0%, #818CF8 45%, #22D3EE 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -93,7 +93,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.1));
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(34, 211, 238, 0.15));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -116,7 +116,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -155,21 +155,21 @@
   animation-delay: 0.4s;
 }
 
-/* ===== Gold-on-navy abstract hero backdrop (layered gradients) ===== */
-.hero-gold-bg {
+/* ===== Aurora hero backdrop — violet → indigo → cyan (layered gradients) ===== */
+.hero-aurora-bg {
   background:
-    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(245, 158, 11, 0.16), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 70% 30%, rgba(217, 119, 6, 0.14), transparent 65%),
-    radial-gradient(ellipse 70% 60% at 15% 85%, rgba(30, 58, 95, 0.38), transparent 65%),
-    radial-gradient(ellipse 45% 40% at 30% 15%, rgba(37, 64, 110, 0.30), transparent 60%),
-    linear-gradient(160deg, #0a1120 0%, #060a13 48%, #05070d 100%);
+    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(139, 92, 246, 0.22), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 70% 30%, rgba(34, 211, 238, 0.13), transparent 65%),
+    radial-gradient(ellipse 70% 60% at 15% 85%, rgba(76, 29, 149, 0.42), transparent 65%),
+    radial-gradient(ellipse 45% 40% at 30% 15%, rgba(49, 46, 129, 0.35), transparent 60%),
+    linear-gradient(160deg, #0b0618 0%, #05050c 48%, #05050c 100%);
 }
 
-.hero-gold-swirl {
+.hero-aurora-swirl {
   background:
-    conic-gradient(from 210deg at 72% 32%, transparent 0deg, rgba(245, 158, 11, 0.20) 60deg, transparent 130deg, rgba(217, 119, 6, 0.14) 210deg, transparent 300deg);
+    conic-gradient(from 210deg at 72% 32%, transparent 0deg, rgba(139, 92, 246, 0.22) 60deg, transparent 130deg, rgba(34, 211, 238, 0.16) 210deg, transparent 300deg);
   filter: blur(30px);
-  animation: swirl-drift 18s ease-in-out infinite alternate;
+  animation: swirl-drift 16s ease-in-out infinite alternate;
 }
 
 @keyframes swirl-drift {
@@ -186,10 +186,34 @@
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
 }
 
-.text-stroke-gold {
-  -webkit-text-stroke: 1px rgba(245, 158, 11, 0.45);
+.text-stroke-violet {
+  -webkit-text-stroke: 1px rgba(167, 139, 250, 0.5);
   color: transparent;
 }
+
+/* ===== Animated conic gradient border (portrait frame) =====
+   A 200%-sized conic layer rotates behind a 2px window, so the frame's
+   border is a living violet → cyan gradient that never stops moving. */
+@keyframes border-spin {
+  to { transform: rotate(360deg); }
+}
+.anim-border-spin {
+  animation: border-spin 7s linear infinite;
+}
+
+/* ===== Page-wide aurora blobs (background continuity) ===== */
+@keyframes aurora-drift-a {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6vw, -4vh) scale(1.15); }
+  100% { transform: translate(-3vw, 5vh) scale(0.95); }
+}
+@keyframes aurora-drift-b {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5vw, 6vh) scale(1.1); }
+  100% { transform: translate(4vw, -3vh) scale(1.05); }
+}
+.aurora-blob-a { animation: aurora-drift-a 22s ease-in-out infinite alternate; }
+.aurora-blob-b { animation: aurora-drift-b 26s ease-in-out infinite alternate; }
 
 /* ===== 3D tilt cards ===== */
 .tilt-scene { perspective: 1100px; }
@@ -257,4 +281,10 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .px-back, .px-mark, .px-content { transform: none; transition: none; }
+  .animate-float-soft,
+  .anim-border-spin,
+  .aurora-blob-a,
+  .aurora-blob-b,
+  .hero-aurora-swirl,
+  .animate-marquee { animation: none; }
 }

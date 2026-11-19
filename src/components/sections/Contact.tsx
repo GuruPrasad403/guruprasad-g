@@ -3,6 +3,7 @@ import { Mail, MapPin, Send, Loader2, Sparkles, MessageSquareHeart } from "lucid
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import toast from "react-hot-toast";
+import Reveal3D from "../ui/Reveal3D";
 import { portfolioData } from "../../data/portfolioData";
 
 export default function Contact() {
@@ -146,14 +147,16 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
+        <Reveal3D>
         <div className="mb-16 text-center md:text-left">
-          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 08 / CONNECT ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Get In Touch
           </h2>
         </div>
+        </Reveal3D>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Details Panel */}
@@ -170,22 +173,22 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             {/* Direct Details Grid */}
             <div className="space-y-4">
               {/* Mail Box */}
-              <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 flex items-center gap-4 hover:border-amber-500/20 transition-all">
-                <div className="p-2.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-lg shrink-0">
-                  <Mail className="w-5 h-5 text-amber-400" />
+              <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 flex items-center gap-4 hover:border-violet-500/20 transition-all">
+                <div className="p-2.5 bg-violet-500/10 border border-violet-500/20 text-violet-400 rounded-lg shrink-0">
+                  <Mail className="w-5 h-5 text-violet-400" />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-slate-500 font-mono uppercase">Direct Inbox</p>
-                  <a href={`mailto:${portfolioData.personalInfo.email}`} className="text-sm font-semibold text-white hover:text-amber-400 transition-colors font-mono">
+                  <a href={`mailto:${portfolioData.personalInfo.email}`} className="text-sm font-semibold text-white hover:text-violet-400 transition-colors font-mono">
                     {portfolioData.personalInfo.email}
                   </a>
                 </div>
               </div>
 
               {/* Location Box */}
-              <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 flex items-center gap-4 hover:border-amber-500/20 transition-all">
-                <div className="p-2.5 bg-slate-800/60 border border-slate-700/50 text-amber-400 rounded-lg shrink-0">
-                  <MapPin className="w-5 h-5 text-amber-400" />
+              <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 flex items-center gap-4 hover:border-violet-500/20 transition-all">
+                <div className="p-2.5 bg-slate-800/60 border border-slate-700/50 text-violet-400 rounded-lg shrink-0">
+                  <MapPin className="w-5 h-5 text-violet-400" />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-slate-500 font-mono uppercase">Coordinates</p>
@@ -213,8 +216,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               ref={formRef}
               onSubmit={handleSubmit}
               className="p-6 sm:p-8 rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md space-y-5"
-              initial={{ opacity: 0, y: 25 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, y: 42, rotateX: -13, transformPerspective: 1100 }}
+              animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <input
@@ -226,7 +229,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Name field */}
               <div className="space-y-1.5">
                 <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 font-mono">
-                  Your Full Name <span className="text-amber-500 font-bold">*</span>
+                  Your Full Name <span className="text-violet-500 font-bold">*</span>
                 </label>
                 <input
                   type="text"
@@ -234,13 +237,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-all ${
-                    errors.name ? "border-amber-500/50 focus:ring-amber-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-amber-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all ${
+                    errors.name ? "border-violet-500/50 focus:ring-violet-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-violet-500"
                   }`}
                   placeholder="Guruprasad G"
                 />
                 {errors.name && (
-                  <span className="text-[10px] font-semibold text-amber-500 tracking-wide font-mono block">
+                  <span className="text-[10px] font-semibold text-violet-500 tracking-wide font-mono block">
                     {errors.name}
                   </span>
                 )}
@@ -249,7 +252,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Email field */}
               <div className="space-y-1.5">
                 <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 font-mono">
-                  Your Email Address <span className="text-amber-500 font-bold">*</span>
+                  Your Email Address <span className="text-violet-500 font-bold">*</span>
                 </label>
                 <input
                   type="email"
@@ -257,13 +260,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-all ${
-                    errors.email ? "border-amber-500/50 focus:ring-amber-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-amber-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all ${
+                    errors.email ? "border-violet-500/50 focus:ring-violet-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-violet-500"
                   }`}
                   placeholder="recruiter@company.com"
                 />
                 {errors.email && (
-                  <span className="text-[10px] font-semibold text-amber-500 tracking-wide font-mono block">
+                  <span className="text-[10px] font-semibold text-violet-500 tracking-wide font-mono block">
                     {errors.email}
                   </span>
                 )}
@@ -272,7 +275,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Subject field */}
               <div className="space-y-1.5">
                 <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 font-mono">
-                  Subject <span className="text-amber-500 font-bold">*</span>
+                  Subject <span className="text-violet-500 font-bold">*</span>
                 </label>
                 <input
                   type="text"
@@ -280,13 +283,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-all ${
-                    errors.subject ? "border-amber-500/50 focus:ring-amber-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-amber-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all ${
+                    errors.subject ? "border-violet-500/50 focus:ring-violet-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-violet-500"
                   }`}
                   placeholder="Opportunity: Web Developer Role"
                 />
                 {errors.subject && (
-                  <span className="text-[10px] font-semibold text-amber-500 tracking-wide font-mono block">
+                  <span className="text-[10px] font-semibold text-violet-500 tracking-wide font-mono block">
                     {errors.subject}
                   </span>
                 )}
@@ -295,7 +298,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Message field */}
               <div className="space-y-1.5">
                 <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 font-mono">
-                  Detailed Message <span className="text-amber-500 font-bold">*</span>
+                  Detailed Message <span className="text-violet-500 font-bold">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -303,13 +306,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-all resize-none ${
-                    errors.message ? "border-amber-500/50 focus:ring-amber-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-amber-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all resize-none ${
+                    errors.message ? "border-violet-500/50 focus:ring-violet-500/20" : "border-slate-200 dark:border-slate-800/80 focus:border-violet-500"
                   }`}
                   placeholder="Hello Guruprasad, we viewed your portfolio and are highly impressed with..."
                 />
                 {errors.message && (
-                  <span className="text-[10px] font-semibold text-amber-500 tracking-wide font-mono block">
+                  <span className="text-[10px] font-semibold text-violet-500 tracking-wide font-mono block">
                     {errors.message}
                   </span>
                 )}
@@ -319,7 +322,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 px-6 rounded-xl bg-amber-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(245,158,11,0.3)] hover:bg-amber-500 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                className="w-full py-4 px-6 rounded-xl bg-violet-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(139, 92, 246,0.3)] hover:bg-violet-500 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >

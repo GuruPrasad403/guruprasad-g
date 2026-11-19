@@ -1,6 +1,7 @@
 import { Award, Calendar, CheckCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import Reveal3D from "../ui/Reveal3D";
 import { portfolioData } from "../../data/portfolioData";
 
 export default function Certifications() {
@@ -19,10 +20,12 @@ export default function Certifications() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40, rotateX: -14, scale: 0.97, transformPerspective: 1100 },
     visible: {
       opacity: 1,
       y: 0,
+      rotateX: 0,
+      scale: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
   };
@@ -35,14 +38,16 @@ export default function Certifications() {
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
+        <Reveal3D>
         <div className="mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 06 / CERTIFICATIONS ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Professional Accreditation
           </h2>
         </div>
+        </Reveal3D>
 
         {/* Certifications list */}
         <motion.div
@@ -55,7 +60,7 @@ export default function Certifications() {
             <motion.div
               key={cert.id}
               variants={itemVariants}
-              className="p-6 rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md relative group overflow-hidden hover:border-amber-500/20 dark:hover:border-amber-500/20 transition-all duration-300"
+              className="p-6 rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md relative group overflow-hidden hover:border-violet-500/20 dark:hover:border-violet-500/20 transition-all duration-300"
               whileHover={{ y: -3 }}
             >
               {cert.image && (
@@ -76,12 +81,12 @@ export default function Certifications() {
               )}
               <div className="flex items-start gap-4">
                 {/* Icon wrapper */}
-                <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 group-hover:bg-amber-500/20 transition-all duration-300">
-                  <Award className="w-5 h-5 text-amber-400" />
+                <div className="p-3 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 group-hover:bg-violet-500/20 transition-all duration-300">
+                  <Award className="w-5 h-5 text-violet-400" />
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight leading-snug group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight leading-snug group-hover:text-violet-400 transition-colors">
                     {cert.title}
                   </h3>
                   <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 font-mono">

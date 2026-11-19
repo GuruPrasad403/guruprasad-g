@@ -4,6 +4,7 @@ import {
   Braces, FileCode2, Atom, Server, Database, Wind, Globe, Layers,
   KeyRound, Boxes, GitBranch, Bot, Sparkles, Cpu
 } from "lucide-react";
+import Reveal3D from "../ui/Reveal3D";
 import { portfolioData } from "../../data/portfolioData";
 
 const iconFor = (name: string) => {
@@ -36,14 +37,16 @@ export default function TechStack() {
       className="relative py-24 px-6 bg-transparent border-t border-slate-800/20 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
+        <Reveal3D>
         <div className="mb-14">
-          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 04 / TOOLBOX ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-white">
             My Tech Stack
           </h2>
         </div>
+        </Reveal3D>
 
         {/* Icon grid */}
         <motion.div
@@ -61,9 +64,9 @@ export default function TechStack() {
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.04 }}
                 whileHover={{ y: -5, scale: 1.04 }}
-                className="group flex flex-col items-center justify-center gap-2.5 py-5 px-2 rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md hover:border-amber-500/40 hover:shadow-[0_12px_30px_rgba(245,158,11,0.15)] transition-colors"
+                className="group flex flex-col items-center justify-center gap-2.5 py-5 px-2 rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md hover:border-violet-500/40 hover:shadow-[0_12px_30px_rgba(139, 92, 246,0.15)] transition-colors"
               >
-                <span className="w-11 h-11 rounded-xl bg-slate-800/70 border border-slate-700/50 flex items-center justify-center text-amber-400 group-hover:text-amber-300 transition-colors">
+                <span className="w-11 h-11 rounded-xl bg-slate-800/70 border border-slate-700/50 flex items-center justify-center text-violet-400 group-hover:text-violet-300 transition-colors">
                   <Icon className="w-5 h-5" />
                 </span>
                 <span className="text-[11px] sm:text-xs font-bold font-mono text-slate-300 text-center leading-tight">
@@ -83,7 +86,7 @@ export default function TechStack() {
               {items.map((tech) => (
                 <span key={`${copy}-${tech}`} className="flex items-center text-sm font-black tracking-[0.2em] uppercase text-slate-500">
                   <span className="px-5">{tech}</span>
-                  <span className="text-amber-500">✦</span>
+                  <span className="text-violet-500">✦</span>
                 </span>
               ))}
             </div>

@@ -13,12 +13,12 @@ import Footer from "../components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="dark relative min-h-screen bg-[#060a13] text-white overflow-x-hidden selection:bg-amber-500/30 selection:text-white">
-      {/* Ambient glows through the page */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[32%] left-[-12%] w-[38vw] h-[38vw] rounded-full bg-slate-500/[0.05] blur-[130px]" />
-        <div className="absolute top-[58%] right-[-12%] w-[34vw] h-[34vw] rounded-full bg-amber-600/[0.05] blur-[120px]" />
-        <div className="absolute bottom-[4%] left-[8%] w-[40vw] h-[40vw] rounded-full bg-slate-500/[0.04] blur-[140px]" />
+    <div className="dark relative min-h-screen bg-[#05050c] text-white overflow-x-hidden selection:bg-violet-500/30 selection:text-white">
+      {/* Animated aurora background — the whole page stays alive */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="aurora-blob-a absolute top-[-10%] left-[-10%] w-[45vw] h-[45vw] rounded-full bg-violet-700/[0.13] blur-[130px]" />
+        <div className="aurora-blob-b absolute top-[38%] right-[-14%] w-[40vw] h-[40vw] rounded-full bg-cyan-500/[0.08] blur-[120px]" />
+        <div className="aurora-blob-a absolute bottom-[-14%] left-[16%] w-[42vw] h-[42vw] rounded-full bg-indigo-600/[0.10] blur-[140px]" />
       </div>
 
       {/* Active layout contents */}

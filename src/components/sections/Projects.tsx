@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Github, ExternalLink, ArrowUpRight, ListChecks, X, Boxes } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import Reveal3D from "../ui/Reveal3D";
 import { portfolioData, Project } from "../../data/portfolioData";
 
 const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -35,10 +36,12 @@ export default function Projects() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 48, rotateX: -16, scale: 0.96, transformPerspective: 1100 },
     visible: {
       opacity: 1,
       y: 0,
+      rotateX: 0,
+      scale: 1,
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
@@ -51,14 +54,16 @@ export default function Projects() {
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
+        <Reveal3D>
         <div className="mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 01 / SHOWCASE ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Featured Projects
           </h2>
         </div>
+        </Reveal3D>
 
         {/* Projects Grid */}
         <motion.div
@@ -76,7 +81,7 @@ export default function Projects() {
             <div
               onMouseMove={handleTilt}
               onMouseLeave={resetTilt}
-              className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-amber-500/40 dark:hover:border-amber-500/40 hover:shadow-[0_22px_45px_rgba(217,119,6,0.16)]"
+              className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-violet-500/40 dark:hover:border-violet-500/40 hover:shadow-[0_22px_45px_rgba(124, 58, 237,0.16)]"
             >
               <div className="tilt-glare" aria-hidden />
               {/* Image Container with Zoom effect */}
@@ -103,7 +108,7 @@ export default function Projects() {
                     </span>
                   ))}
                   {project.techStack.length > 3 && (
-                    <span className="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20 text-[10px] font-bold font-mono text-amber-400">
+                    <span className="px-2 py-0.5 rounded bg-violet-500/10 border border-violet-500/20 text-[10px] font-bold font-mono text-violet-400">
                       +{project.techStack.length - 3} more
                     </span>
                   )}
@@ -121,7 +126,7 @@ export default function Projects() {
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="flex-grow px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800/50 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1 hover:bg-amber-600 dark:hover:bg-amber-600 transition-colors"
+                    className="flex-grow px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800/50 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1 hover:bg-violet-600 dark:hover:bg-violet-600 transition-colors"
                   >
                     View Details
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -147,13 +152,13 @@ export default function Projects() {
         {/* AEM Projects — enterprise work at Indegene */}
         <div className="mt-24">
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600/25 to-amber-900/20 border border-amber-500/30 flex items-center justify-center">
-              <Boxes className="w-5 h-5 text-amber-400" />
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600/25 to-violet-900/20 border border-violet-500/30 flex items-center justify-center">
+              <Boxes className="w-5 h-5 text-violet-400" />
             </span>
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
               AEM Projects
             </h3>
-            <span className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-[10px] font-bold font-mono tracking-widest text-amber-400 uppercase">
+            <span className="px-2.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/25 text-[10px] font-bold font-mono tracking-widest text-violet-400 uppercase">
               Enterprise · Indegene
             </span>
           </div>
@@ -167,21 +172,21 @@ export default function Projects() {
             {portfolioData.aemProjects.map((site, i) => (
               <motion.div
                 key={site.id}
-                initial={{ opacity: 0, y: 26 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, y: 42, rotateX: -14, transformPerspective: 1100 }}
+                animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
                 transition={{ duration: 0.55, delay: 0.08 * i, ease: "easeOut" }}
                 className="h-full"
               >
                 <div
                   onMouseMove={handleTilt}
                   onMouseLeave={resetTilt}
-                  className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-amber-500/40 hover:shadow-[0_22px_45px_rgba(217,119,6,0.16)]"
+                  className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-violet-500/40 hover:shadow-[0_22px_45px_rgba(124, 58, 237,0.16)]"
                 >
                   <div className="tilt-glare" aria-hidden />
                   {/* Gradient header band */}
-                  <div className="relative px-6 py-5 bg-gradient-to-br from-slate-900 via-slate-900/70 to-slate-950 border-b border-amber-500/15 overflow-hidden">
-                    <div className="absolute -top-8 -right-6 w-28 h-28 bg-amber-600/15 blur-2xl rounded-full pointer-events-none" />
-                    <p className="relative text-[10px] font-bold font-mono tracking-widest text-amber-400 uppercase mb-1">
+                  <div className="relative px-6 py-5 bg-gradient-to-br from-slate-900 via-slate-900/70 to-slate-950 border-b border-violet-500/15 overflow-hidden">
+                    <div className="absolute -top-8 -right-6 w-28 h-28 bg-violet-600/15 blur-2xl rounded-full pointer-events-none" />
+                    <p className="relative text-[10px] font-bold font-mono tracking-widest text-violet-400 uppercase mb-1">
                       Adobe Experience Manager
                     </p>
                     <p className="relative font-mono text-sm font-semibold text-slate-100 break-all">
@@ -208,7 +213,7 @@ export default function Projects() {
                           href={site.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="ml-auto inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-amber-400 hover:text-amber-300 transition-colors"
+                          className="ml-auto inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-violet-400 hover:text-violet-300 transition-colors"
                           aria-label={`Visit ${site.title}`}
                         >
                           Visit
@@ -278,7 +283,7 @@ export default function Projects() {
 
                 {/* Tech Stack Pills */}
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-amber-500 font-mono mb-2.5">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-violet-500 font-mono mb-2.5">
                     Technologies Applied
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
@@ -295,7 +300,7 @@ export default function Projects() {
 
                 {/* Core Features */}
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-amber-500 font-mono mb-3">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-violet-500 font-mono mb-3">
                     Engineered Features
                   </h4>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -314,7 +319,7 @@ export default function Projects() {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-grow md:flex-none px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_5px_15px_rgba(217,119,6,0.3)] transition-colors"
+                    className="flex-grow md:flex-none px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_5px_15px_rgba(124, 58, 237,0.3)] transition-colors"
                   >
                     Launch Live Demo
                     <ExternalLink className="w-4 h-4" />

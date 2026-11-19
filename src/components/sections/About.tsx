@@ -1,6 +1,7 @@
 import { Award, Briefcase, Calendar, GraduationCap, Flame } from "lucide-react";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import Reveal3D from "../ui/Reveal3D";
 import { portfolioData } from "../../data/portfolioData";
 
 export default function About() {
@@ -26,8 +27,8 @@ export default function About() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 48, rotateX: -16, scale: 0.96, transformPerspective: 1100 },
+    visible: { opacity: 1, y: 0, rotateX: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
@@ -38,14 +39,16 @@ export default function About() {
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
+        <Reveal3D>
         <div className="mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 02 / ABOUT ME ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Professional Summary
           </h2>
         </div>
+        </Reveal3D>
 
         <motion.div
           variants={containerVariants}
@@ -65,7 +68,7 @@ export default function About() {
               variants={itemVariants}
               className="text-base text-slate-500 dark:text-slate-400 leading-relaxed"
             >
-              Beyond core software engineering in React.js, AEM, and Node.js, I take pride in bridging AI tools with day-to-day work tasks. As an appointed <strong className="text-amber-500 dark:text-amber-400 font-semibold">AI Champion at Indegene</strong>, I closely collaborate with team leads and team members to analyze daily operational friction points, recommend tailored AI solutions (GitHub Copilot, ROVO), and streamline access and permissions across internal departments.
+              Beyond core software engineering in React.js, AEM, and Node.js, I take pride in bridging AI tools with day-to-day work tasks. As an appointed <strong className="text-violet-500 dark:text-violet-400 font-semibold">AI Champion at Indegene</strong>, I closely collaborate with team leads and team members to analyze daily operational friction points, recommend tailored AI solutions (GitHub Copilot, ROVO), and streamline access and permissions across internal departments.
             </motion.p>
 
             {/* AI Champion Leadership Spotlight Card */}
@@ -74,10 +77,10 @@ export default function About() {
               className="p-6 rounded-2xl bg-slate-100/50 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md relative overflow-hidden"
             >
               {/* Subtle background glow */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-violet-500/10 rounded-full blur-2xl pointer-events-none" />
               
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 shrink-0">
+                <div className="p-3 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-500 shrink-0">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
@@ -85,7 +88,7 @@ export default function About() {
                     AI Champion &amp; Team Enablement
                   </h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Appointed as <strong className="text-amber-500 dark:text-amber-400">AI Champion</strong> at Indegene alongside core Web Development responsibilities. Engaged monthly with groups of <strong className="text-amber-500 dark:text-amber-400">30+ employees</strong> to evaluate daily workflows, conduct AI tool demonstrations, match practical Copilot/ROVO capabilities to engineering tasks, and coordinate permissions with IT to drive measurable efficiency gains across the organization.
+                    Appointed as <strong className="text-violet-500 dark:text-violet-400">AI Champion</strong> at Indegene alongside core Web Development responsibilities. Engaged monthly with groups of <strong className="text-violet-500 dark:text-violet-400">30+ employees</strong> to evaluate daily workflows, conduct AI tool demonstrations, match practical Copilot/ROVO capabilities to engineering tasks, and coordinate permissions with IT to drive measurable efficiency gains across the organization.
                   </p>
                 </div>
               </div>
@@ -96,9 +99,9 @@ export default function About() {
               variants={itemVariants}
               className="p-6 rounded-2xl bg-slate-100/50 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/[0.06] rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-violet-500/[0.06] rounded-full blur-2xl pointer-events-none" />
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 text-amber-400 shrink-0">
+                <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 text-violet-400 shrink-0">
                   <Flame className="w-5 h-5" />
                 </div>
                 <div>
@@ -121,7 +124,7 @@ export default function About() {
                 <motion.div
                   key={stat.label}
                   variants={itemVariants}
-                  className="p-5 rounded-2xl bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md hover:border-amber-500/30 transition-colors duration-300 relative group overflow-hidden"
+                  className="p-5 rounded-2xl bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md hover:border-violet-500/30 transition-colors duration-300 relative group overflow-hidden"
                   whileHover={{ y: -4 }}
                 >
                   <div className="absolute -right-2 -bottom-2 opacity-5 text-slate-400 group-hover:scale-110 transition-transform duration-300">

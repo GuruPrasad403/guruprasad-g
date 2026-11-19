@@ -64,29 +64,29 @@ export default function CustomCursor() {
     <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
       {/* Trailing Outer Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-amber-500/50 -translate-x-1/2 -translate-y-1/2 mix-blend-screen"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-violet-500/50 -translate-x-1/2 -translate-y-1/2 mix-blend-screen"
         style={{
           x: trailX,
           y: trailY,
         }}
         animate={{
           scale: hovered ? 1.8 : 1.0,
-          backgroundColor: hovered ? "rgba(245, 158, 11, 0.15)" : "rgba(245, 158, 11, 0)",
-          borderColor: hovered ? "rgba(245, 158, 11, 0.8)" : "rgba(245, 158, 11, 0.5)",
+          backgroundColor: hovered ? "rgba(139, 92, 246, 0.15)" : "rgba(139, 92, 246, 0)",
+          borderColor: hovered ? "rgba(139, 92, 246, 0.8)" : "rgba(139, 92, 246, 0.5)",
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.2 }}
       />
 
       {/* Direct Inner Core */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-amber-500 -translate-x-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(245,158,11,0.8)] mix-blend-screen"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-violet-500 -translate-x-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(139, 92, 246,0.8)] mix-blend-screen"
         style={{
           x: cursorX,
           y: cursorY,
         }}
         animate={{
           scale: hovered ? 1.2 : 1.0,
-          backgroundColor: hovered ? "#F59E0B" : "#22D3EE",
+          backgroundColor: hovered ? "#8B5CF6" : "#22D3EE",
         }}
         transition={{ type: "tween", duration: 0.1 }}
       />
