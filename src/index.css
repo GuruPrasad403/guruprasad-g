@@ -155,8 +155,8 @@
   animation-delay: 0.4s;
 }
 
-/* ===== Red abstract hero backdrop (deep red, layered gradients) ===== */
-.hero-red-bg {
+/* ===== Gold-on-navy abstract hero backdrop (layered gradients) ===== */
+.hero-gold-bg {
   background:
     radial-gradient(ellipse 60% 50% at 85% 10%, rgba(245, 158, 11, 0.16), transparent 60%),
     radial-gradient(ellipse 55% 45% at 70% 30%, rgba(217, 119, 6, 0.14), transparent 65%),
@@ -165,7 +165,7 @@
     linear-gradient(160deg, #0a1120 0%, #060a13 48%, #05070d 100%);
 }
 
-.hero-red-swirl {
+.hero-gold-swirl {
   background:
     conic-gradient(from 210deg at 72% 32%, transparent 0deg, rgba(245, 158, 11, 0.20) 60deg, transparent 130deg, rgba(217, 119, 6, 0.14) 210deg, transparent 300deg);
   filter: blur(30px);
@@ -186,7 +186,7 @@
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
 }
 
-.text-stroke-red {
+.text-stroke-gold {
   -webkit-text-stroke: 1px rgba(245, 158, 11, 0.45);
   color: transparent;
 }

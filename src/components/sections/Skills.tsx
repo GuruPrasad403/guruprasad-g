@@ -43,7 +43,7 @@ export default function Skills() {
         {/* Section Header */}
         <div className="mb-16">
           <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
-            [ 04 / EXPERTISE ]
+            [ 03 / EXPERTISE ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Technical Skills
@@ -89,7 +89,7 @@ export default function Skills() {
                     {/* Progress Track */}
                     <div className="w-full h-1.5 bg-slate-200 dark:bg-slate-950 rounded-full overflow-hidden relative">
                       <motion.div
-                        className="h-full bg-gradient-to-r from-amber-500 to-amber-700 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                        className="h-full bg-gradient-to-r from-amber-500 to-amber-700 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.2)]"
                         initial={{ width: 0 }}
                         animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
                         transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}

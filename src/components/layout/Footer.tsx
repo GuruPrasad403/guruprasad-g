@@ -79,7 +79,7 @@ export default function Footer() {
           <motion.button
             id="scroll-to-top"
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-30 w-11 h-11 rounded-full bg-amber-600 hover:bg-amber-500 border border-amber-400/20 text-white flex items-center justify-center shadow-[0_4px_20px_rgba(239,68,68,0.5)] transition-colors focus:outline-none"
+            className="fixed bottom-8 right-8 z-30 w-11 h-11 rounded-full bg-amber-600 hover:bg-amber-500 border border-amber-400/20 text-white flex items-center justify-center shadow-[0_4px_20px_rgba(245,158,11,0.5)] transition-colors focus:outline-none"
             initial={{ opacity: 0, scale: 0.5, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 20 }}

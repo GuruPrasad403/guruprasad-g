@@ -37,7 +37,7 @@ export default function Certifications() {
         {/* Section Header */}
         <div className="mb-16">
           <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
-            [ 07 / CERTIFICATIONS ]
+            [ 06 / CERTIFICATIONS ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Professional Accreditation

@@ -35,7 +35,7 @@ export default function NotFound() {
         {/* Action button */}
         <motion.a
           href="/"
-          className="px-6 py-3.5 rounded-xl bg-amber-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(239,68,68,0.3)] hover:bg-amber-500 transition-all cursor-pointer"
+          className="px-6 py-3.5 rounded-xl bg-amber-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(245,158,11,0.3)] hover:bg-amber-500 transition-all cursor-pointer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >

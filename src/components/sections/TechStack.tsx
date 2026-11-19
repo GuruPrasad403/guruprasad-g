@@ -38,7 +38,7 @@ export default function TechStack() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-14">
           <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
-            [ 05 / TOOLBOX ]
+            [ 04 / TOOLBOX ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-white">
             My Tech Stack
@@ -61,7 +61,7 @@ export default function TechStack() {
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.04 }}
                 whileHover={{ y: -5, scale: 1.04 }}
-                className="group flex flex-col items-center justify-center gap-2.5 py-5 px-2 rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md hover:border-amber-500/40 hover:shadow-[0_12px_30px_rgba(239,68,68,0.15)] transition-colors"
+                className="group flex flex-col items-center justify-center gap-2.5 py-5 px-2 rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md hover:border-amber-500/40 hover:shadow-[0_12px_30px_rgba(245,158,11,0.15)] transition-colors"
               >
                 <span className="w-11 h-11 rounded-xl bg-slate-800/70 border border-slate-700/50 flex items-center justify-center text-amber-400 group-hover:text-amber-300 transition-colors">
                   <Icon className="w-5 h-5" />

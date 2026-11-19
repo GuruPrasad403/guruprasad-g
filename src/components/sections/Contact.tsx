@@ -148,7 +148,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         {/* Section Header */}
         <div className="mb-16 text-center md:text-left">
           <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
-            [ 09 / CONNECT ]
+            [ 08 / CONNECT ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Get In Touch
@@ -319,7 +319,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 px-6 rounded-xl bg-amber-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(239,68,68,0.3)] hover:bg-amber-500 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                className="w-full py-4 px-6 rounded-xl bg-amber-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(245,158,11,0.3)] hover:bg-amber-500 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >

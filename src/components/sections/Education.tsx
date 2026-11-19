@@ -21,7 +21,7 @@ export default function Education() {
         {/* Section Header */}
         <div>
           <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
-            [ 08 / ACADEMICS & HACKATHONS ]
+            [ 07 / ACADEMICS & HACKATHONS ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Education &amp; Hackathon Achievements

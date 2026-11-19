@@ -37,7 +37,7 @@ export default function Experience() {
         {/* Section Header */}
         <div className="mb-16">
           <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
-            [ 06 / TIMELINE ]
+            [ 05 / TIMELINE ]
           </span>
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Professional Journey
@@ -63,7 +63,7 @@ export default function Experience() {
                   {/* Timeline Glowing Node */}
                   <div className={`absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full border-2 bg-slate-950 flex items-center justify-center transition-all duration-300 ${
                     isLatest
-                      ? "border-amber-500 shadow-[0_0_12px_rgba(239,68,68,0.6)]"
+                      ? "border-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.6)]"
                       : "border-slate-700 group-hover:border-amber-500/50"
                   }`}>
                     {isLatest && (

@@ -264,52 +264,6 @@ export const portfolioData = {
     }
   ],
 
-  services: [
-    {
-      id: "svc-business",
-      name: "Business Website",
-      price: "From ₹7,999",
-      tagline: "A clean, fast website that puts your business on the map.",
-      features: ["Up to 5 pages", "Mobile-first responsive design", "Contact form & WhatsApp button", "Basic SEO setup", "Delivered in 7 days"]
-    },
-    {
-      id: "svc-standard",
-      name: "Standard Website",
-      price: "₹14,999",
-      tagline: "More pages, richer sections and a polished brand feel.",
-      features: ["Up to 10 pages", "Custom sections & animations", "Gallery / menu / catalogue pages", "Google Maps & social links", "Delivered in 10 days"],
-      popular: true
-    },
-    {
-      id: "svc-booking",
-      name: "Website with Ordering / Booking",
-      price: "₹24,999",
-      tagline: "Take orders and bookings directly from your website.",
-      features: ["Online ordering or booking flow", "Admin-friendly updates", "Payment-ready structure", "Customer enquiry notifications", "Delivered in 14 days"]
-    },
-    {
-      id: "svc-react",
-      name: "React Frontend Development",
-      price: "Custom quote",
-      tagline: "Modern, reusable React interfaces built with TypeScript and Tailwind.",
-      features: ["Component-driven UI", "REST API integration", "Responsive & accessible", "Performance-focused builds"]
-    },
-    {
-      id: "svc-mern",
-      name: "Full MERN Web App",
-      price: "Custom quote",
-      tagline: "End-to-end web apps — React, Node, Express and MongoDB.",
-      features: ["Frontend + backend + database", "JWT authentication", "REST APIs", "Deployment support"]
-    },
-    {
-      id: "svc-aem",
-      name: "AEM Components",
-      price: "Custom quote",
-      tagline: "Adobe Experience Manager components and page builds for enterprise teams.",
-      features: ["Reusable AEM components", "HCP portal & brand site pages", "Splash / campaign pages", "CMS workflow friendly"]
-    }
-  ],
-
   techStack: [
     "JavaScript", "TypeScript", "React", "Node.js", "Express", "MongoDB",
     "Tailwind CSS", "HTML5", "CSS3", "REST APIs", "JWT", "AEM",

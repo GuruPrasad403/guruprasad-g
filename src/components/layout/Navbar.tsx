@@ -6,7 +6,6 @@ const navLinks = [
   { name: "Home", href: "#hero" },
   { name: "Projects", href: "#projects" },
   { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" }
@@ -111,7 +110,7 @@ export default function Navbar() {
                 {isTargetActive && (
                   <motion.span
                     layoutId="activeNavTab"
-                    className="absolute inset-0 bg-amber-600 rounded-full shadow-[0_2px_10px_rgba(239,68,68,0.4)]"
+                    className="absolute inset-0 bg-amber-600 rounded-full shadow-[0_2px_10px_rgba(245,158,11,0.4)]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -125,7 +124,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <motion.a
             href="#contact"
-            className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-white bg-slate-900 dark:bg-slate-800/60 hover:bg-amber-600 dark:hover:bg-amber-600 border border-slate-200/10 dark:border-slate-800/80 rounded-xl flex items-center gap-1.5 group transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_20px_rgba(239,68,68,0.3)]"
+            className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-white bg-slate-900 dark:bg-slate-800/60 hover:bg-amber-600 dark:hover:bg-amber-600 border border-slate-200/10 dark:border-slate-800/80 rounded-xl flex items-center gap-1.5 group transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_20px_rgba(245,158,11,0.3)]"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -182,7 +181,7 @@ export default function Navbar() {
                     }}
                     className={`py-3.5 px-5 rounded-2xl text-base font-bold tracking-wider uppercase transition-all flex items-center justify-between ${
                       isTargetActive
-                        ? "bg-amber-600/20 text-amber-400 border border-amber-500/30 shadow-[0_0_15px_rgba(239,68,68,0.15)]"
+                        ? "bg-amber-600/20 text-amber-400 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]"
                         : "text-slate-400 hover:text-white bg-slate-900/40 border border-slate-800/40"
                     }`}
                   >
@@ -209,7 +208,7 @@ export default function Navbar() {
                     });
                   }
                 }}
-                className="mt-6 py-4 text-center text-xs font-bold uppercase tracking-widest text-white bg-amber-600 hover:bg-amber-500 rounded-2xl flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(239,68,68,0.3)] transition-all"
+                className="mt-6 py-4 text-center text-xs font-bold uppercase tracking-widest text-white bg-amber-600 hover:bg-amber-500 rounded-2xl flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(245,158,11,0.3)] transition-all"
                 whileTap={{ scale: 0.98 }}
               >
                 Hire Me

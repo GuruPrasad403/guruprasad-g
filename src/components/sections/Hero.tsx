@@ -131,11 +131,11 @@ export default function Hero() {
       id="hero"
       ref={sectionRef}
       onMouseMove={handleHeroMove}
-      className="relative min-h-screen flex items-center pt-28 pb-20 px-6 overflow-hidden hero-red-bg"
+      className="relative min-h-screen flex items-center pt-28 pb-20 px-6 overflow-hidden hero-gold-bg"
     >
       {/* Navy/gold abstract backdrop + grid (also the WebGL fallback) */}
       <div className="px-back absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 hero-red-swirl" />
+        <div className="absolute inset-0 hero-gold-swirl" />
         <div className="absolute inset-0 hero-grain" />
         <motion.div
           className="absolute -top-24 right-[8%] w-[420px] h-[420px] bg-amber-600/25 rounded-full blur-[110px]"
@@ -148,7 +148,7 @@ export default function Hero() {
           transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         {/* Giant outline watermark */}
-        <span aria-hidden className="px-mark absolute -bottom-6 left-0 text-[22vw] leading-none font-black tracking-tighter text-stroke-red opacity-[0.07] select-none whitespace-nowrap">
+        <span aria-hidden className="px-mark absolute -bottom-6 left-0 text-[22vw] leading-none font-black tracking-tighter text-stroke-gold opacity-[0.07] select-none whitespace-nowrap">
           DEVELOPER
         </span>
       </div>

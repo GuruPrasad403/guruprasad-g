@@ -128,7 +128,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             {/* Outer Progress bar */}
             <div className="w-full h-[3px] bg-slate-900 rounded-full overflow-hidden relative border border-slate-800/20">
               <motion.div
-                className="h-full bg-gradient-to-r from-amber-500 via-amber-500 to-amber-700 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.5)]"
+                className="h-full bg-gradient-to-r from-amber-500 via-amber-500 to-amber-700 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.5)]"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: "easeOut" }}
               />
