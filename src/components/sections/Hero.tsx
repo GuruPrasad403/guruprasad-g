@@ -85,17 +85,35 @@ export default function Hero() {
     };
   }, []);
 
-  // Portrait 3D parallax tilt (layered depth)
+  // Hero layered parallax: expose the pointer as CSS vars on the section;
+  // backdrop / watermark / content layers drift at different speeds (CSS).
+  const handleHeroMove = (e: React.MouseEvent<HTMLElement>) => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const px = e.clientX / window.innerWidth - 0.5;
+    const py = e.clientY / window.innerHeight - 0.5;
+    el.style.setProperty("--hpx", px.toFixed(3));
+    el.style.setProperty("--hpy", py.toFixed(3));
+  };
+
+  // Portrait 3D tilt + glare (fine pointers only; springs back on leave)
   const handlePortraitMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const el = portraitRef.current;
     if (!el) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
     const r = el.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width - 0.5;
     const py = (e.clientY - r.top) / r.height - 0.5;
-    el.style.transform = `rotateY(${px * 14}deg) rotateX(${-py * 12}deg)`;
+    el.style.transition = "transform 0.12s ease-out";
+    el.style.transform = `rotateY(${px * 16}deg) rotateX(${-py * 13}deg)`;
+    el.style.setProperty("--mx", `${(px + 0.5) * 100}%`);
+    el.style.setProperty("--my", `${(py + 0.5) * 100}%`);
   };
   const resetPortrait = () => {
-    if (portraitRef.current) portraitRef.current.style.transform = "";
+    const el = portraitRef.current;
+    if (!el) return;
+    el.style.transition = "transform 0.7s cubic-bezier(0.22, 1.35, 0.36, 1)";
+    el.style.transform = "";
   };
 
   const handleDownloadResume = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
@@ -112,10 +130,11 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
+      onMouseMove={handleHeroMove}
       className="relative min-h-screen flex items-center pt-28 pb-20 px-6 overflow-hidden hero-red-bg"
     >
-      {/* Red abstract swirl + grid overlays (also the WebGL fallback backdrop) */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* Navy/gold abstract backdrop + grid (also the WebGL fallback) */}
+      <div className="px-back absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 hero-red-swirl" />
         <div className="absolute inset-0 hero-grain" />
         <motion.div
@@ -129,7 +148,7 @@ export default function Hero() {
           transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         {/* Giant outline watermark */}
-        <span aria-hidden className="absolute -bottom-6 left-0 text-[22vw] leading-none font-black tracking-tighter text-stroke-red opacity-[0.07] select-none whitespace-nowrap">
+        <span aria-hidden className="px-mark absolute -bottom-6 left-0 text-[22vw] leading-none font-black tracking-tighter text-stroke-red opacity-[0.07] select-none whitespace-nowrap">
           DEVELOPER
         </span>
       </div>
@@ -143,7 +162,7 @@ export default function Hero() {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-14 items-center w-full">
+      <div className="px-content max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-14 items-center w-full">
         {/* Left: type block */}
         <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
           <motion.div
@@ -222,7 +241,7 @@ export default function Hero() {
           >
             <motion.a
               href="#projects"
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-amber-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(239,68,68,0.35)] hover:bg-amber-500 hover:shadow-[0_15px_35px_rgba(239,68,68,0.5)] transition-all duration-300"
+              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-amber-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(217,119,6,0.35)] hover:bg-amber-500 hover:shadow-[0_15px_35px_rgba(217,119,6,0.5)] transition-all duration-300"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -294,19 +313,22 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.5 }}
         >
           <div className="absolute -inset-6 bg-amber-600/25 blur-[70px] rounded-full pointer-events-none" />
+          <div className="animate-float-soft">
           <div
             ref={portraitRef}
             onMouseMove={handlePortraitMove}
             onMouseLeave={resetPortrait}
-            className="portrait-tilt animate-float-soft relative"
+            className="portrait-tilt relative"
           >
-            <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-amber-500 via-amber-600/60 to-amber-950 shadow-[0_30px_80px_rgba(239,68,68,0.30)]">
+            <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-amber-500 via-amber-600/60 to-amber-950 shadow-[0_30px_80px_rgba(217,119,6,0.30)]">
+              {/* Original camera photo, used exactly as shot — no cut-out,
+                  no compositing, no retouching. Framed, never edited. */}
               <img
                 src={profilePhotoDataUri}
                 alt="Guruprasad G"
-                className="w-full aspect-[3/4] object-cover object-top rounded-[calc(2rem-2px)]"
+                className="w-full aspect-[3/4] object-cover rounded-[calc(2rem-2px)]"
               />
-              <div className="absolute inset-0 rounded-[calc(2rem-2px)] bg-gradient-to-t from-[#04060c]/75 via-transparent to-transparent" />
+              <div className="absolute inset-0 rounded-[calc(2rem-2px)] bg-gradient-to-t from-[#04060c]/60 via-transparent to-transparent pointer-events-none" />
               {/* Name strip on photo — floats above the image plane */}
               <div className="portrait-layer-name absolute bottom-4 left-4 right-4 flex items-end justify-between">
                 <div>
@@ -329,6 +351,9 @@ export default function Hero() {
                 </div>
               </motion.div>
             </div>
+            {/* Pointer glare sweeping the frame while it tilts */}
+            <div className="tilt-glare rounded-[2rem]" aria-hidden />
+          </div>
           </div>
         </motion.div>
       </div>

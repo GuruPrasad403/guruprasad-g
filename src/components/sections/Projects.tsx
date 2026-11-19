@@ -9,7 +9,7 @@ const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
   const r = el.getBoundingClientRect();
   const px = (e.clientX - r.left) / r.width - 0.5;
   const py = (e.clientY - r.top) / r.height - 0.5;
-  el.style.transform = `rotateY(${px * 14}deg) rotateX(${-py * 14}deg) scale(1.02)`;
+  el.style.transform = `rotateY(${px * 11}deg) rotateX(${-py * 11}deg) scale(1.02)`;
   el.style.setProperty("--mx", `${(px + 0.5) * 100}%`);
   el.style.setProperty("--my", `${(py + 0.5) * 100}%`);
 };
@@ -76,7 +76,7 @@ export default function Projects() {
             <div
               onMouseMove={handleTilt}
               onMouseLeave={resetTilt}
-              className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-amber-500/40 dark:hover:border-amber-500/40 hover:shadow-[0_22px_45px_rgba(239,68,68,0.16)]"
+              className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-amber-500/40 dark:hover:border-amber-500/40 hover:shadow-[0_22px_45px_rgba(217,119,6,0.16)]"
             >
               <div className="tilt-glare" aria-hidden />
               {/* Image Container with Zoom effect */}
@@ -175,7 +175,7 @@ export default function Projects() {
                 <div
                   onMouseMove={handleTilt}
                   onMouseLeave={resetTilt}
-                  className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-amber-500/40 hover:shadow-[0_22px_45px_rgba(239,68,68,0.16)]"
+                  className="tilt-card relative group flex flex-col h-full rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md overflow-hidden hover:border-amber-500/40 hover:shadow-[0_22px_45px_rgba(217,119,6,0.16)]"
                 >
                   <div className="tilt-glare" aria-hidden />
                   {/* Gradient header band */}
@@ -314,7 +314,7 @@ export default function Projects() {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-grow md:flex-none px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_5px_15px_rgba(239,68,68,0.3)] transition-colors"
+                    className="flex-grow md:flex-none px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_5px_15px_rgba(217,119,6,0.3)] transition-colors"
                   >
                     Launch Live Demo
                     <ExternalLink className="w-4 h-4" />

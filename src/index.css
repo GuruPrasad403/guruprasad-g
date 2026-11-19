@@ -238,3 +238,23 @@
 }
 .portrait-layer-name { transform: translateZ(34px); }
 .portrait-layer-badge { transform: translateZ(56px); }
+.portrait-tilt:hover .tilt-glare { opacity: 1; }
+
+/* ===== Hero layered mouse parallax =====
+   --hpx / --hpy (-0.5..0.5) are set on the hero section from the pointer.
+   Backdrop, watermark and content drift at different rates for real depth. */
+.px-back {
+  transform: translate3d(calc(var(--hpx, 0) * 14px), calc(var(--hpy, 0) * 10px), 0) scale(1.04);
+  transition: transform 0.5s ease-out;
+}
+.px-mark {
+  transform: translate3d(calc(var(--hpx, 0) * -22px), calc(var(--hpy, 0) * -12px), 0);
+  transition: transform 0.5s ease-out;
+}
+.px-content {
+  transform: translate3d(calc(var(--hpx, 0) * -6px), calc(var(--hpy, 0) * -5px), 0);
+  transition: transform 0.5s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .px-back, .px-mark, .px-content { transform: none; transition: none; }
+}
