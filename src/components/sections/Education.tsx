@@ -3,6 +3,7 @@ import { GraduationCap, Calendar, Trophy, Users, Briefcase, ExternalLink, Github
 import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import Reveal3D from "../ui/Reveal3D";
+import SectionAccent from "../three/SectionAccent";
 import { portfolioData, Hackathon } from "../../data/portfolioData";
 
 export default function Education() {
@@ -21,13 +22,16 @@ export default function Education() {
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Section Header */}
         <Reveal3D>
-        <div>
+        <div className="flex items-start justify-between gap-6">
+          <div>
           <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 07 / ACADEMICS & HACKATHONS ]
           </span>
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
+          <h2 className="text-[1.65rem] sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Education &amp; Hackathon Achievements
           </h2>
+          </div>
+          <SectionAccent variant={0} />
         </div>
         </Reveal3D>
 

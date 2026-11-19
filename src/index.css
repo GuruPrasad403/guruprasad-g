@@ -12,6 +12,10 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    /* Belt-and-braces: no element (watermarks, marquees, decorations)
+       may ever push the page sideways on a phone. */
+    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   @media (hover: hover) {
@@ -191,16 +195,6 @@
   color: transparent;
 }
 
-/* ===== Animated conic gradient border (portrait frame) =====
-   A 200%-sized conic layer rotates behind a 2px window, so the frame's
-   border is a living violet → cyan gradient that never stops moving. */
-@keyframes border-spin {
-  to { transform: rotate(360deg); }
-}
-.anim-border-spin {
-  animation: border-spin 7s linear infinite;
-}
-
 /* ===== Page-wide aurora blobs (background continuity) ===== */
 @keyframes aurora-drift-a {
   0% { transform: translate(0, 0) scale(1); }
@@ -234,13 +228,6 @@
 }
 .animate-marquee:hover { animation-play-state: paused; }
 
-/* ===== Slow float for hero portrait frame ===== */
-@keyframes float-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-.animate-float-soft { animation: float-soft 6s ease-in-out infinite; }
-
 /* ===== Card glare that follows the pointer (set via --mx/--my) ===== */
 .tilt-glare {
   position: absolute;
@@ -252,17 +239,6 @@
   background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.09), transparent 45%);
 }
 .tilt-card:hover .tilt-glare { opacity: 1; }
-
-/* ===== Hero portrait 3D depth ===== */
-.portrait-scene { perspective: 1200px; }
-.portrait-tilt {
-  transform-style: preserve-3d;
-  transition: transform 0.45s ease;
-  will-change: transform;
-}
-.portrait-layer-name { transform: translateZ(34px); }
-.portrait-layer-badge { transform: translateZ(56px); }
-.portrait-tilt:hover .tilt-glare { opacity: 1; }
 
 /* ===== Hero layered mouse parallax =====
    --hpx / --hpy (-0.5..0.5) are set on the hero section from the pointer.
@@ -281,8 +257,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .px-back, .px-mark, .px-content { transform: none; transition: none; }
-  .animate-float-soft,
-  .anim-border-spin,
   .aurora-blob-a,
   .aurora-blob-b,
   .hero-aurora-swirl,

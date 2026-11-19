@@ -1,8 +1,7 @@
 import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
-import { Github, Linkedin, Mail, ArrowDown, FileText, ChevronRight, Sparkles, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, FileText, ChevronRight, MapPin } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { portfolioData } from "../../data/portfolioData";
-import { profilePhotoDataUri } from "../../assets/profilePhoto";
 
 const HeroScene = lazy(() => import("../three/HeroScene"));
 
@@ -29,7 +28,6 @@ export default function Hero() {
   const [sceneOn, setSceneOn] = useState(false);
   const [heroVisible, setHeroVisible] = useState(true);
   const sectionRef = useRef<HTMLElement | null>(null);
-  const portraitRef = useRef<HTMLDivElement | null>(null);
   const scrollRef = useRef(0);
 
   // Scroll-driven motion: hero content drifts up + fades and the backdrop
@@ -121,26 +119,6 @@ export default function Hero() {
     el.style.setProperty("--hpy", py.toFixed(3));
   };
 
-  // Portrait 3D tilt + glare (fine pointers only; springs back on leave)
-  const handlePortraitMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = portraitRef.current;
-    if (!el) return;
-    if (!window.matchMedia("(pointer: fine)").matches) return;
-    const r = el.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width - 0.5;
-    const py = (e.clientY - r.top) / r.height - 0.5;
-    el.style.transition = "transform 0.12s ease-out";
-    el.style.transform = `rotateY(${px * 16}deg) rotateX(${-py * 13}deg)`;
-    el.style.setProperty("--mx", `${(px + 0.5) * 100}%`);
-    el.style.setProperty("--my", `${(py + 0.5) * 100}%`);
-  };
-  const resetPortrait = () => {
-    const el = portraitRef.current;
-    if (!el) return;
-    el.style.transition = "transform 0.7s cubic-bezier(0.22, 1.35, 0.36, 1)";
-    el.style.transform = "";
-  };
-
   const handleDownloadResume = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     e.preventDefault();
     const link = document.createElement('a');
@@ -188,9 +166,9 @@ export default function Hero() {
       )}
 
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="w-full relative z-10">
-      <div className="px-content max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-14 items-center w-full">
-        {/* Left: type block */}
-        <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+      <div className="px-content max-w-4xl mx-auto w-full">
+        {/* Type block — centred over the full 3D scene (no photo) */}
+        <div className="text-center flex flex-col items-center">
           <motion.div
             className="mb-6 px-4 py-1.5 rounded-full bg-slate-950/60 border border-violet-500/30 backdrop-blur-md flex items-center gap-2"
             initial={{ opacity: 0, y: 20 }}
@@ -219,8 +197,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="block text-6xl sm:text-7xl md:text-8xl xl:text-[7.5rem]">GURUPRASAD</span>
-            <span className="block text-6xl sm:text-7xl md:text-8xl xl:text-[7.5rem]">
+            <span className="block text-[clamp(2.6rem,12.5vw,3.75rem)] sm:text-7xl md:text-8xl xl:text-[7.5rem]">GURUPRASAD</span>
+            <span className="block text-[clamp(2.6rem,12.5vw,3.75rem)] sm:text-7xl md:text-8xl xl:text-[7.5rem]">
               G<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-indigo-400 to-cyan-400">.</span>
             </span>
           </motion.h1>
@@ -237,7 +215,7 @@ export default function Hero() {
 
           {/* Typewriter roles */}
           <motion.div
-            className="h-8 text-base sm:text-xl font-medium text-slate-400 mb-8 flex items-center gap-1.5 justify-center lg:justify-start"
+            className="h-8 text-base sm:text-xl font-medium text-slate-400 mb-8 flex items-center gap-1.5 justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.65 }}
@@ -248,7 +226,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="max-w-xl text-sm sm:text-base text-slate-400 leading-relaxed mb-10"
+            className="max-w-xl mx-auto text-sm sm:text-base text-slate-400 leading-relaxed mb-10"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.72 }}
@@ -330,66 +308,6 @@ export default function Hero() {
             </span>
           </motion.div>
         </div>
-
-        {/* Right: portrait with real 3D parallax depth */}
-        <motion.div
-          className="portrait-scene relative mx-auto w-full max-w-sm lg:max-w-md"
-          initial={{ opacity: 0, scale: 0.94, y: 24 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.5 }}
-        >
-          <div className="absolute -inset-6 bg-violet-600/25 blur-[70px] rounded-full pointer-events-none" />
-          <div className="animate-float-soft">
-          <div
-            ref={portraitRef}
-            onMouseMove={handlePortraitMove}
-            onMouseLeave={resetPortrait}
-            className="portrait-tilt relative"
-          >
-            <div className="relative rounded-[2rem] overflow-hidden shadow-[0_30px_80px_rgba(124, 58, 237,0.35)]">
-              {/* Animated conic gradient border — a violet → cyan ring that
-                  rotates continuously behind a 2px window. The photo itself
-                  is untouched; only the frame moves. */}
-              <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="anim-border-spin w-[230%] aspect-square shrink-0 bg-[conic-gradient(from_0deg,#8b5cf6,#22d3ee,#818cf8,#8b5cf6)]" />
-              </div>
-              <div className="relative m-[2px] rounded-[calc(2rem-2px)] overflow-hidden">
-              {/* Original camera photo, used exactly as shot — no cut-out,
-                  no compositing, no retouching. Framed, never edited. */}
-              <img
-                src={profilePhotoDataUri}
-                alt="Guruprasad G"
-                className="w-full aspect-[3/4] object-cover block"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#05050c]/70 via-transparent to-transparent pointer-events-none" />
-              {/* Name strip on photo */}
-              <div className="portrait-layer-name absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                <div>
-                  <p className="text-white font-black text-lg leading-tight drop-shadow">Guruprasad G</p>
-                  <p className="text-cyan-300 text-[11px] font-mono tracking-widest uppercase">Web Developer Trainee · Indegene</p>
-                </div>
-              </div>
-              </div>
-            </div>
-            {/* Floating badge — highest depth layer */}
-            <div className="portrait-layer-badge absolute -right-3 sm:-right-6 top-6">
-              <motion.div
-                className="px-3.5 py-2.5 rounded-2xl bg-slate-950/85 border border-violet-500/40 backdrop-blur-md flex items-center gap-2 shadow-xl"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Sparkles className="w-4 h-4 text-violet-400" />
-                <div className="leading-tight">
-                  <p className="text-[11px] font-bold text-white">AI Champion</p>
-                  <p className="text-[10px] text-slate-400 font-mono">Indegene</p>
-                </div>
-              </motion.div>
-            </div>
-            {/* Pointer glare sweeping the frame while it tilts */}
-            <div className="tilt-glare rounded-[2rem]" aria-hidden />
-          </div>
-          </div>
-        </motion.div>
       </div>
       </motion.div>
 

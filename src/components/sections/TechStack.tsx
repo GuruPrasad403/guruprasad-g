@@ -5,6 +5,7 @@ import {
   KeyRound, Boxes, GitBranch, Bot, Sparkles, Cpu
 } from "lucide-react";
 import Reveal3D from "../ui/Reveal3D";
+import SectionAccent from "../three/SectionAccent";
 import { portfolioData } from "../../data/portfolioData";
 
 const iconFor = (name: string) => {
@@ -38,13 +39,16 @@ export default function TechStack() {
     >
       <div className="max-w-6xl mx-auto">
         <Reveal3D>
-        <div className="mb-14">
+        <div className="mb-14 flex items-start justify-between gap-6">
+          <div>
           <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 04 / TOOLBOX ]
           </span>
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-white">
+          <h2 className="text-[1.65rem] sm:text-6xl font-black tracking-tight uppercase text-white">
             My Tech Stack
           </h2>
+          </div>
+          <SectionAccent variant={0} />
         </div>
         </Reveal3D>
 

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import toast from "react-hot-toast";
 import Reveal3D from "../ui/Reveal3D";
+import SectionAccent from "../three/SectionAccent";
 import { portfolioData } from "../../data/portfolioData";
 
 export default function Contact() {
@@ -148,13 +149,16 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <Reveal3D>
-        <div className="mb-16 text-center md:text-left">
+        <div className="mb-16 flex items-start justify-between gap-6">
+          <div className="text-center md:text-left">
           <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 08 / CONNECT ]
           </span>
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
+          <h2 className="text-[1.65rem] sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Get In Touch
           </h2>
+          </div>
+          <SectionAccent variant={1} />
         </div>
         </Reveal3D>
 

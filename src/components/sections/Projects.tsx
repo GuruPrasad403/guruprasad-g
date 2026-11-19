@@ -3,6 +3,7 @@ import { Github, ExternalLink, ArrowUpRight, ListChecks, X, Boxes } from "lucide
 import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import Reveal3D from "../ui/Reveal3D";
+import SectionAccent from "../three/SectionAccent";
 import { portfolioData, Project } from "../../data/portfolioData";
 
 const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -55,13 +56,16 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <Reveal3D>
-        <div className="mb-16">
+        <div className="mb-16 flex items-start justify-between gap-6">
+          <div>
           <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 01 / SHOWCASE ]
           </span>
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
+          <h2 className="text-[1.65rem] sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Featured Projects
           </h2>
+          </div>
+          <SectionAccent variant={0} />
         </div>
         </Reveal3D>
 

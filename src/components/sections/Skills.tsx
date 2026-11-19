@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { Code, Server, Wrench, ShieldCheck } from "lucide-react";
 import Reveal3D from "../ui/Reveal3D";
+import SectionAccent from "../three/SectionAccent";
 import { portfolioData } from "../../data/portfolioData";
 
 export default function Skills() {
@@ -45,13 +46,16 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <Reveal3D>
-        <div className="mb-16">
+        <div className="mb-16 flex items-start justify-between gap-6">
+          <div>
           <span className="text-xs font-bold font-mono tracking-widest text-violet-500 uppercase block mb-3">
             [ 03 / EXPERTISE ]
           </span>
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
+          <h2 className="text-[1.65rem] sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Technical Skills
           </h2>
+          </div>
+          <SectionAccent variant={2} />
         </div>
         </Reveal3D>
 
