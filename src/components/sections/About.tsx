@@ -34,15 +34,15 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="relative py-24 px-6 bg-transparent border-t border-zinc-200/10 dark:border-zinc-800/20"
+      className="relative py-24 px-6 bg-transparent border-t border-slate-200/10 dark:border-slate-800/20"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-red-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
             [ 02 / ABOUT ME ]
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
+          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Professional Summary
           </h2>
         </div>
@@ -57,35 +57,35 @@ export default function About() {
           <div className="lg:col-span-7 space-y-6">
             <motion.p
               variants={itemVariants}
-              className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-sans"
+              className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-sans"
             >
               {portfolioData.personalInfo.bio}
             </motion.p>
             <motion.p
               variants={itemVariants}
-              className="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed"
+              className="text-base text-slate-500 dark:text-slate-400 leading-relaxed"
             >
-              Beyond core software engineering in React.js, AEM, and Node.js, I take pride in bridging AI tools with day-to-day work tasks. As an appointed <strong className="text-red-500 dark:text-red-400 font-semibold">AI Champion at Indegene</strong>, I closely collaborate with team leads and team members to analyze daily operational friction points, recommend tailored AI solutions (GitHub Copilot, ROVO), and streamline access and permissions across internal departments.
+              Beyond core software engineering in React.js, AEM, and Node.js, I take pride in bridging AI tools with day-to-day work tasks. As an appointed <strong className="text-amber-500 dark:text-amber-400 font-semibold">AI Champion at Indegene</strong>, I closely collaborate with team leads and team members to analyze daily operational friction points, recommend tailored AI solutions (GitHub Copilot, ROVO), and streamline access and permissions across internal departments.
             </motion.p>
 
             {/* AI Champion Leadership Spotlight Card */}
             <motion.div
               variants={itemVariants}
-              className="p-6 rounded-2xl bg-zinc-100/50 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative overflow-hidden"
+              className="p-6 rounded-2xl bg-slate-100/50 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md relative overflow-hidden"
             >
               {/* Subtle background glow */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
               
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 shrink-0">
+                <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 shrink-0">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-2 flex items-center gap-1.5 font-mono">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2 flex items-center gap-1.5 font-mono">
                     AI Champion &amp; Team Enablement
                   </h3>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                    Appointed as <strong className="text-red-500 dark:text-red-400">AI Champion</strong> at Indegene alongside core Web Development responsibilities. Engaged monthly with groups of <strong className="text-red-500 dark:text-red-400">30+ employees</strong> to evaluate daily workflows, conduct AI tool demonstrations, match practical Copilot/ROVO capabilities to engineering tasks, and coordinate permissions with IT to drive measurable efficiency gains across the organization.
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Appointed as <strong className="text-amber-500 dark:text-amber-400">AI Champion</strong> at Indegene alongside core Web Development responsibilities. Engaged monthly with groups of <strong className="text-amber-500 dark:text-amber-400">30+ employees</strong> to evaluate daily workflows, conduct AI tool demonstrations, match practical Copilot/ROVO capabilities to engineering tasks, and coordinate permissions with IT to drive measurable efficiency gains across the organization.
                   </p>
                 </div>
               </div>
@@ -94,19 +94,19 @@ export default function About() {
             {/* Professional Growth Callout */}
             <motion.div
               variants={itemVariants}
-              className="p-6 rounded-2xl bg-zinc-100/50 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative overflow-hidden"
+              className="p-6 rounded-2xl bg-slate-100/50 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/[0.06] rounded-full blur-2xl pointer-events-none" />
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 shrink-0">
+                <div className="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 text-amber-400 shrink-0">
                   <Flame className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-2 flex items-center gap-1.5 font-mono">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-2 flex items-center gap-1.5 font-mono">
                     Career Milestone &amp; Ownership
                   </h3>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                    Successfully converted from <strong className="text-orange-500 dark:text-orange-400">Web Developer Apprentice/Trainee to full-time Web Developer Trainee</strong> at Indegene through consistent quality output, rapid debugging, enterprise AEM component delivery, and strong peer collaboration.
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Successfully converted from <strong className="text-slate-900 dark:text-slate-100">Web Developer Apprentice/Trainee to full-time Web Developer Trainee</strong> at Indegene through consistent quality output, rapid debugging, enterprise AEM component delivery, and strong peer collaboration.
                   </p>
                 </div>
               </div>
@@ -121,19 +121,19 @@ export default function About() {
                 <motion.div
                   key={stat.label}
                   variants={itemVariants}
-                  className="p-5 rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/40 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md hover:border-red-500/30 transition-colors duration-300 relative group overflow-hidden"
+                  className="p-5 rounded-2xl bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md hover:border-amber-500/30 transition-colors duration-300 relative group overflow-hidden"
                   whileHover={{ y: -4 }}
                 >
-                  <div className="absolute -right-2 -bottom-2 opacity-5 text-zinc-400 group-hover:scale-110 transition-transform duration-300">
+                  <div className="absolute -right-2 -bottom-2 opacity-5 text-slate-400 group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-24 h-24" />
                   </div>
-                  <div className="p-2.5 rounded-xl bg-zinc-200/50 dark:bg-zinc-800/60 text-zinc-600 dark:text-zinc-400 w-fit mb-4 border border-zinc-200/10 dark:border-zinc-700/50">
+                  <div className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 w-fit mb-4 border border-slate-200/10 dark:border-slate-700/50">
                     <Icon className="w-4 h-4" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-1">
+                  <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                     {stat.label}
                   </div>
                 </motion.div>

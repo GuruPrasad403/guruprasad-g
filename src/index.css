@@ -24,14 +24,14 @@
   }
 
   body {
-    @apply bg-[#070507] text-white;
+    @apply bg-[#060a13] text-white;
     font-family: var(--font-sans);
     overflow-x: hidden;
   }
 
   /* Selection styling */
   ::selection {
-    background-color: rgba(239, 68, 68, 0.25);
+    background-color: rgba(245, 158, 11, 0.25);
     color: #FFFFFF;
   }
 }
@@ -42,17 +42,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090B;
+  background: #060a13;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E1E24;
+  background: #1c2536;
   border-radius: 9999px;
   border: 2px solid #09090B;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #EF4444;
+  background: #F59E0B;
 }
 
 /* Glassmorphism */
@@ -78,7 +78,7 @@
 }
 
 .text-gradient-primary {
-  background: linear-gradient(135deg, #EF4444 0%, #F97316 100%);
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -93,7 +93,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.3), rgba(249, 115, 22, 0.1));
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.1));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -116,7 +116,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -158,16 +158,16 @@
 /* ===== Red abstract hero backdrop (deep red, layered gradients) ===== */
 .hero-red-bg {
   background:
-    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(249, 115, 22, 0.22), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 70% 30%, rgba(239, 68, 68, 0.35), transparent 65%),
-    radial-gradient(ellipse 70% 60% at 15% 85%, rgba(153, 27, 27, 0.4), transparent 65%),
-    radial-gradient(ellipse 45% 40% at 30% 15%, rgba(220, 38, 38, 0.25), transparent 60%),
-    linear-gradient(160deg, #160507 0%, #0a0305 45%, #070507 100%);
+    radial-gradient(ellipse 60% 50% at 85% 10%, rgba(245, 158, 11, 0.16), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 70% 30%, rgba(217, 119, 6, 0.14), transparent 65%),
+    radial-gradient(ellipse 70% 60% at 15% 85%, rgba(30, 58, 95, 0.38), transparent 65%),
+    radial-gradient(ellipse 45% 40% at 30% 15%, rgba(37, 64, 110, 0.30), transparent 60%),
+    linear-gradient(160deg, #0a1120 0%, #060a13 48%, #05070d 100%);
 }
 
 .hero-red-swirl {
   background:
-    conic-gradient(from 210deg at 72% 32%, transparent 0deg, rgba(239, 68, 68, 0.20) 60deg, transparent 130deg, rgba(249, 115, 22, 0.14) 210deg, transparent 300deg);
+    conic-gradient(from 210deg at 72% 32%, transparent 0deg, rgba(245, 158, 11, 0.20) 60deg, transparent 130deg, rgba(217, 119, 6, 0.14) 210deg, transparent 300deg);
   filter: blur(30px);
   animation: swirl-drift 18s ease-in-out infinite alternate;
 }
@@ -187,7 +187,7 @@
 }
 
 .text-stroke-red {
-  -webkit-text-stroke: 1px rgba(239, 68, 68, 0.45);
+  -webkit-text-stroke: 1px rgba(245, 158, 11, 0.45);
   color: transparent;
 }
 
@@ -216,3 +216,25 @@
   50% { transform: translateY(-12px); }
 }
 .animate-float-soft { animation: float-soft 6s ease-in-out infinite; }
+
+/* ===== Card glare that follows the pointer (set via --mx/--my) ===== */
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.09), transparent 45%);
+}
+.tilt-card:hover .tilt-glare { opacity: 1; }
+
+/* ===== Hero portrait 3D depth ===== */
+.portrait-scene { perspective: 1200px; }
+.portrait-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+.portrait-layer-name { transform: translateZ(34px); }
+.portrait-layer-badge { transform: translateZ(56px); }

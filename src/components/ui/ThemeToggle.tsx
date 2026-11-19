@@ -33,7 +33,7 @@ export default function ThemeToggle() {
     <motion.button
       id="theme-toggle"
       onClick={toggleTheme}
-      className="p-2.5 rounded-xl border border-zinc-200/10 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40 backdrop-blur-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all duration-300 relative overflow-hidden"
+      className="p-2.5 rounded-xl border border-slate-200/10 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/40 backdrop-blur-md text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all duration-300 relative overflow-hidden"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle visual theme"
@@ -53,7 +53,7 @@ export default function ThemeToggle() {
             animate={{ scale: 1, rotate: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 200 }}
           >
-            <Moon className="w-5 h-5 text-red-600" />
+            <Moon className="w-5 h-5 text-amber-600" />
           </motion.div>
         )}
       </div>

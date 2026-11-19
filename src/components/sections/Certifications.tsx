@@ -31,15 +31,15 @@ export default function Certifications() {
     <section
       id="certifications"
       ref={ref}
-      className="relative py-24 px-6 bg-transparent border-t border-zinc-200/10 dark:border-zinc-800/20"
+      className="relative py-24 px-6 bg-transparent border-t border-slate-200/10 dark:border-slate-800/20"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-red-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
             [ 07 / CERTIFICATIONS ]
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
+          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-slate-900 dark:text-white">
             Professional Accreditation
           </h2>
         </div>
@@ -55,7 +55,7 @@ export default function Certifications() {
             <motion.div
               key={cert.id}
               variants={itemVariants}
-              className="p-6 rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative group overflow-hidden hover:border-red-500/20 dark:hover:border-red-500/20 transition-all duration-300"
+              className="p-6 rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200/10 dark:border-slate-800/80 backdrop-blur-md relative group overflow-hidden hover:border-amber-500/20 dark:hover:border-amber-500/20 transition-all duration-300"
               whileHover={{ y: -3 }}
             >
               {cert.image && (
@@ -63,7 +63,7 @@ export default function Certifications() {
                   href={cert.image}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block mb-4 rounded-xl overflow-hidden border border-zinc-200/20 dark:border-zinc-800/80"
+                  className="block mb-4 rounded-xl overflow-hidden border border-slate-200/20 dark:border-slate-800/80"
                   title="View certificate"
                 >
                   <img
@@ -76,23 +76,23 @@ export default function Certifications() {
               )}
               <div className="flex items-start gap-4">
                 {/* Icon wrapper */}
-                <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 group-hover:bg-red-500/20 transition-all duration-300">
-                  <Award className="w-5 h-5 text-red-400" />
+                <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 group-hover:bg-amber-500/20 transition-all duration-300">
+                  <Award className="w-5 h-5 text-amber-400" />
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-sm font-bold text-zinc-900 dark:text-white tracking-tight leading-snug group-hover:text-red-400 transition-colors">
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight leading-snug group-hover:text-amber-400 transition-colors">
                     {cert.title}
                   </h3>
-                  <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 font-mono">
+                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 font-mono">
                     {cert.issuer}
                   </p>
                   
                   {/* Date badge */}
-                  <div className="pt-2 flex items-center gap-1.5 text-[10px] font-mono text-zinc-400">
-                    <Calendar className="w-3.5 h-3.5 text-zinc-600" />
+                  <div className="pt-2 flex items-center gap-1.5 text-[10px] font-mono text-slate-400">
+                    <Calendar className="w-3.5 h-3.5 text-slate-600" />
                     <span>Issued: {cert.date}</span>
-                    <span className="text-zinc-700">•</span>
+                    <span className="text-slate-700">•</span>
                     <span className="text-emerald-500 flex items-center gap-0.5">
                       <CheckCircle className="w-3 h-3 text-emerald-500" /> Verifiable
                     </span>

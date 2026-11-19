@@ -20,20 +20,20 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-zinc-950 dark:bg-[#09090B] border-t border-zinc-200/5 dark:border-zinc-800/20 py-12 px-6">
+    <footer className="relative bg-slate-950 dark:bg-[#09090B] border-t border-slate-200/5 dark:border-slate-800/20 py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand/Monogram */}
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
             <span className="text-white text-sm font-extrabold font-sans">G</span>
           </div>
-          <p className="text-xs text-zinc-500 font-mono">
+          <p className="text-xs text-slate-500 font-mono">
             &lt; Guruprasad G /&gt;
           </p>
         </div>
 
         {/* Copy text */}
-        <p className="text-xs text-zinc-600 dark:text-zinc-500 text-center tracking-wide font-sans">
+        <p className="text-xs text-slate-600 dark:text-slate-500 text-center tracking-wide font-sans">
           &copy; {new Date().getFullYear()} Guruprasad G. Crafted with absolute precision. All rights reserved.
         </p>
 
@@ -43,7 +43,7 @@ export default function Footer() {
             href={portfolioData.personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-9 h-9 rounded-xl border border-zinc-200/5 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40 text-zinc-500 hover:text-white dark:hover:text-white flex items-center justify-center transition-colors hover:border-zinc-400"
+            className="w-9 h-9 rounded-xl border border-slate-200/5 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/40 text-slate-500 hover:text-white dark:hover:text-white flex items-center justify-center transition-colors hover:border-slate-400"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="GitHub Profile"
@@ -54,7 +54,7 @@ export default function Footer() {
             href={portfolioData.personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-9 h-9 rounded-xl border border-zinc-200/5 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40 text-zinc-500 hover:text-red-400 dark:hover:text-red-400 flex items-center justify-center transition-colors hover:border-red-500/50"
+            className="w-9 h-9 rounded-xl border border-slate-200/5 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/40 text-slate-500 hover:text-amber-400 dark:hover:text-amber-400 flex items-center justify-center transition-colors hover:border-amber-500/50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="LinkedIn Profile"
@@ -63,7 +63,7 @@ export default function Footer() {
           </motion.a>
           <motion.a
             href={`mailto:${portfolioData.personalInfo.email}`}
-            className="w-9 h-9 rounded-xl border border-zinc-200/5 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40 text-zinc-500 hover:text-orange-400 dark:hover:text-orange-400 flex items-center justify-center transition-colors hover:border-orange-500/50"
+            className="w-9 h-9 rounded-xl border border-slate-200/5 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/40 text-slate-500 hover:text-amber-400 dark:hover:text-amber-400 flex items-center justify-center transition-colors hover:border-amber-500/50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Email Address"
@@ -79,7 +79,7 @@ export default function Footer() {
           <motion.button
             id="scroll-to-top"
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-30 w-11 h-11 rounded-full bg-red-600 hover:bg-red-500 border border-red-400/20 text-white flex items-center justify-center shadow-[0_4px_20px_rgba(239,68,68,0.5)] transition-colors focus:outline-none"
+            className="fixed bottom-8 right-8 z-30 w-11 h-11 rounded-full bg-amber-600 hover:bg-amber-500 border border-amber-400/20 text-white flex items-center justify-center shadow-[0_4px_20px_rgba(239,68,68,0.5)] transition-colors focus:outline-none"
             initial={{ opacity: 0, scale: 0.5, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 20 }}

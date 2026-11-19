@@ -33,14 +33,14 @@ export default function TechStack() {
     <section
       id="techstack"
       ref={ref}
-      className="relative py-24 px-6 bg-transparent border-t border-zinc-800/20 overflow-hidden"
+      className="relative py-24 px-6 bg-transparent border-t border-slate-800/20 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-14">
-          <span className="text-xs font-bold font-mono tracking-widest text-red-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-amber-500 uppercase block mb-3">
             [ 05 / TOOLBOX ]
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+          <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase text-white">
             My Tech Stack
           </h2>
         </div>
@@ -61,12 +61,12 @@ export default function TechStack() {
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.04 }}
                 whileHover={{ y: -5, scale: 1.04 }}
-                className="group flex flex-col items-center justify-center gap-2.5 py-5 px-2 rounded-2xl bg-zinc-900/30 border border-zinc-800/80 backdrop-blur-md hover:border-red-500/40 hover:shadow-[0_12px_30px_rgba(239,68,68,0.15)] transition-colors"
+                className="group flex flex-col items-center justify-center gap-2.5 py-5 px-2 rounded-2xl bg-slate-900/30 border border-slate-800/80 backdrop-blur-md hover:border-amber-500/40 hover:shadow-[0_12px_30px_rgba(239,68,68,0.15)] transition-colors"
               >
-                <span className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600/25 to-orange-600/15 border border-red-500/25 flex items-center justify-center text-red-400 group-hover:text-orange-300 transition-colors">
+                <span className="w-11 h-11 rounded-xl bg-slate-800/70 border border-slate-700/50 flex items-center justify-center text-amber-400 group-hover:text-amber-300 transition-colors">
                   <Icon className="w-5 h-5" />
                 </span>
-                <span className="text-[11px] sm:text-xs font-bold font-mono text-zinc-300 text-center leading-tight">
+                <span className="text-[11px] sm:text-xs font-bold font-mono text-slate-300 text-center leading-tight">
                   {tech}
                 </span>
               </motion.div>
@@ -76,14 +76,14 @@ export default function TechStack() {
       </div>
 
       {/* Scrolling marquee strip */}
-      <div className="relative border-y border-red-500/15 bg-red-950/10 py-3.5 overflow-hidden">
+      <div className="relative border-y border-slate-800/70 bg-slate-900/40 py-3.5 overflow-hidden">
         <div className="flex w-max animate-marquee gap-0">
           {[0, 1].map((copy) => (
             <div key={copy} className="flex items-center shrink-0" aria-hidden={copy === 1}>
               {items.map((tech) => (
-                <span key={`${copy}-${tech}`} className="flex items-center text-sm font-black tracking-[0.2em] uppercase text-zinc-500">
+                <span key={`${copy}-${tech}`} className="flex items-center text-sm font-black tracking-[0.2em] uppercase text-slate-500">
                   <span className="px-5">{tech}</span>
-                  <span className="text-red-500">✦</span>
+                  <span className="text-amber-500">✦</span>
                 </span>
               ))}
             </div>

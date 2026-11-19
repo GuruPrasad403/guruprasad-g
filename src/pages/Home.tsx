@@ -14,12 +14,12 @@ import Footer from "../components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="dark relative min-h-screen bg-[#070507] text-white overflow-x-hidden selection:bg-red-500/30 selection:text-white">
+    <div className="dark relative min-h-screen bg-[#060a13] text-white overflow-x-hidden selection:bg-amber-500/30 selection:text-white">
       {/* Ambient deep-red glows through the page */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[32%] left-[-12%] w-[38vw] h-[38vw] rounded-full bg-red-800/10 blur-[130px]" />
-        <div className="absolute top-[58%] right-[-12%] w-[34vw] h-[34vw] rounded-full bg-red-600/10 blur-[120px]" />
-        <div className="absolute bottom-[4%] left-[8%] w-[40vw] h-[40vw] rounded-full bg-red-900/10 blur-[140px]" />
+        <div className="absolute top-[32%] left-[-12%] w-[38vw] h-[38vw] rounded-full bg-slate-500/[0.05] blur-[130px]" />
+        <div className="absolute top-[58%] right-[-12%] w-[34vw] h-[34vw] rounded-full bg-amber-600/[0.05] blur-[120px]" />
+        <div className="absolute bottom-[4%] left-[8%] w-[40vw] h-[40vw] rounded-full bg-slate-500/[0.04] blur-[140px]" />
       </div>
 
       {/* Active layout contents */}

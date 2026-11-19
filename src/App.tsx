@@ -46,7 +46,7 @@ export default function App() {
               },
               error: {
                 iconTheme: {
-                  primary: "#EF4444",
+                  primary: "#F59E0B",
                   secondary: "#18181B",
                 },
               },
