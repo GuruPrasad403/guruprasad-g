@@ -14,6 +14,7 @@ export default function App() {
       {isLoading ? (
         <LoadingScreen onComplete={() => setIsLoading(false)} />
       ) : (
+        <div className="dark">
         <BrowserRouter>
           {/* Custom Cursor Trailing Engine */}
           <CustomCursor />
@@ -52,6 +53,7 @@ export default function App() {
             }}
           />
         </BrowserRouter>
+        </div>
       )}
     </>
   );

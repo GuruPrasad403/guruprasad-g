@@ -1,8 +1,20 @@
-import { useState } from "react";
-import { Github, ExternalLink, ArrowUpRight, ListChecks, X } from "lucide-react";
+import React, { useState } from "react";
+import { Github, ExternalLink, ArrowUpRight, ListChecks, X, Boxes } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { portfolioData, Project } from "../../data/portfolioData";
+
+const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
+  const el = e.currentTarget;
+  const r = el.getBoundingClientRect();
+  const px = (e.clientX - r.left) / r.width - 0.5;
+  const py = (e.clientY - r.top) / r.height - 0.5;
+  el.style.transform = `rotateY(${px * 10}deg) rotateX(${-py * 10}deg)`;
+};
+
+const resetTilt = (e: React.MouseEvent<HTMLDivElement>) => {
+  e.currentTarget.style.transform = "";
+};
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -38,8 +50,8 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
-            [ 04 / SHOWCASE ]
+          <span className="text-xs font-bold font-mono tracking-widest text-red-500 uppercase block mb-3">
+            [ 01 / SHOWCASE ]
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
             Featured Projects
@@ -51,13 +63,18 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 tilt-scene"
         >
           {portfolioData.projects.map((project) => (
             <motion.div
               key={project.id}
               variants={cardVariants}
-              className="group flex flex-col h-full rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md overflow-hidden hover:border-blue-500/20 dark:hover:border-blue-500/20 hover:shadow-[0_10px_30px_rgba(59,130,246,0.08)] transition-all duration-300"
+              className="h-full"
+            >
+            <div
+              onMouseMove={handleTilt}
+              onMouseLeave={resetTilt}
+              className="tilt-card group flex flex-col h-full rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md overflow-hidden hover:border-red-500/40 dark:hover:border-red-500/40 hover:shadow-[0_22px_45px_rgba(239,68,68,0.16)]"
             >
               {/* Image Container with Zoom effect */}
               <div className="relative aspect-video overflow-hidden">
@@ -83,7 +100,7 @@ export default function Projects() {
                     </span>
                   ))}
                   {project.techStack.length > 3 && (
-                    <span className="px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold font-mono text-blue-400">
+                    <span className="px-2 py-0.5 rounded bg-red-500/10 border border-red-500/20 text-[10px] font-bold font-mono text-red-400">
                       +{project.techStack.length - 3} more
                     </span>
                   )}
@@ -101,7 +118,7 @@ export default function Projects() {
                 <div className="flex items-center gap-3 pt-4 border-t border-zinc-200/50 dark:border-zinc-800/50">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="flex-grow px-4 py-2.5 rounded-xl bg-zinc-900 dark:bg-zinc-800/50 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1 hover:bg-blue-600 dark:hover:bg-blue-600 transition-colors"
+                    className="flex-grow px-4 py-2.5 rounded-xl bg-zinc-900 dark:bg-zinc-800/50 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1 hover:bg-red-600 dark:hover:bg-red-600 transition-colors"
                   >
                     View Details
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -119,9 +136,92 @@ export default function Projects() {
                   </motion.a>
                 </div>
               </div>
+            </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* AEM Projects — enterprise work at Indegene */}
+        <div className="mt-24">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600/30 to-orange-600/15 border border-red-500/30 flex items-center justify-center">
+              <Boxes className="w-5 h-5 text-red-400" />
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-900 dark:text-white">
+              AEM Projects
+            </h3>
+            <span className="px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/25 text-[10px] font-bold font-mono tracking-widest text-red-400 uppercase">
+              Enterprise · Indegene
+            </span>
+          </div>
+          <p className="max-w-3xl text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-10">
+            Adobe Experience Manager work from my role at Indegene — AstraZeneca oncology
+            brand and HCP (healthcare professional) websites where I build and maintain
+            reusable AEM components, pages and splash experiences.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 tilt-scene">
+            {portfolioData.aemProjects.map((site, i) => (
+              <motion.div
+                key={site.id}
+                initial={{ opacity: 0, y: 26 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, delay: 0.08 * i, ease: "easeOut" }}
+                className="h-full"
+              >
+                <div
+                  onMouseMove={handleTilt}
+                  onMouseLeave={resetTilt}
+                  className="tilt-card group flex flex-col h-full rounded-2xl bg-zinc-900/30 border border-zinc-800/80 backdrop-blur-md overflow-hidden hover:border-red-500/40 hover:shadow-[0_22px_45px_rgba(239,68,68,0.16)]"
+                >
+                  {/* Gradient header band */}
+                  <div className="relative px-6 py-5 bg-gradient-to-br from-red-950 via-[#2a0a0d] to-zinc-950 border-b border-red-500/15 overflow-hidden">
+                    <div className="absolute -top-8 -right-6 w-28 h-28 bg-red-600/25 blur-2xl rounded-full pointer-events-none" />
+                    <p className="relative text-[10px] font-bold font-mono tracking-widest text-red-400 uppercase mb-1">
+                      Adobe Experience Manager
+                    </p>
+                    <p className="relative font-mono text-sm font-semibold text-zinc-100 break-all">
+                      {site.domain || "Internal campaign pages"}
+                    </p>
+                  </div>
+
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h4 className="text-lg font-bold text-white mb-2 leading-tight">
+                      {site.title}
+                    </h4>
+                    <p className="text-sm text-zinc-400 mb-6 flex-grow">
+                      {site.description}
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t border-zinc-800/50">
+                      <span className="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700/50 text-[10px] font-bold font-mono text-zinc-300">
+                        AEM
+                      </span>
+                      <span className="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700/50 text-[10px] font-bold font-mono text-zinc-300">
+                        Components &amp; Pages
+                      </span>
+                      {site.url ? (
+                        <a
+                          href={site.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-auto inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-red-400 hover:text-orange-300 transition-colors"
+                          aria-label={`Visit ${site.title}`}
+                        >
+                          Visit
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      ) : (
+                        <span className="ml-auto text-[11px] font-mono text-zinc-500 uppercase tracking-wider">
+                          Campaign work
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Expanded Modal case-study drawer */}
@@ -174,7 +274,7 @@ export default function Projects() {
 
                 {/* Tech Stack Pills */}
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 font-mono mb-2.5">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-red-500 font-mono mb-2.5">
                     Technologies Applied
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
@@ -191,7 +291,7 @@ export default function Projects() {
 
                 {/* Core Features */}
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 font-mono mb-3">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-red-500 font-mono mb-3">
                     Engineered Features
                   </h4>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -210,7 +310,7 @@ export default function Projects() {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-grow md:flex-none px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_5px_15px_rgba(59,130,246,0.3)] transition-colors"
+                    className="flex-grow md:flex-none px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_5px_15px_rgba(239,68,68,0.3)] transition-colors"
                   >
                     Launch Live Demo
                     <ExternalLink className="w-4 h-4" />

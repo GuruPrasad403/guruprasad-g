@@ -147,8 +147,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 text-center md:text-left">
-          <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
-            [ 07 / CONNECT ]
+          <span className="text-xs font-bold font-mono tracking-widest text-red-500 uppercase block mb-3">
+            [ 09 / CONNECT ]
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
             Get In Touch
@@ -170,22 +170,22 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             {/* Direct Details Grid */}
             <div className="space-y-4">
               {/* Mail Box */}
-              <div className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/60 flex items-center gap-4 hover:border-blue-500/20 transition-all">
-                <div className="p-2.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-lg shrink-0">
-                  <Mail className="w-5 h-5 text-blue-400" />
+              <div className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/60 flex items-center gap-4 hover:border-red-500/20 transition-all">
+                <div className="p-2.5 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg shrink-0">
+                  <Mail className="w-5 h-5 text-red-400" />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-zinc-500 font-mono uppercase">Direct Inbox</p>
-                  <a href={`mailto:${portfolioData.personalInfo.email}`} className="text-sm font-semibold text-white hover:text-blue-400 transition-colors font-mono">
+                  <a href={`mailto:${portfolioData.personalInfo.email}`} className="text-sm font-semibold text-white hover:text-red-400 transition-colors font-mono">
                     {portfolioData.personalInfo.email}
                   </a>
                 </div>
               </div>
 
               {/* Location Box */}
-              <div className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/60 flex items-center gap-4 hover:border-blue-500/20 transition-all">
-                <div className="p-2.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-lg shrink-0">
-                  <MapPin className="w-5 h-5 text-cyan-400" />
+              <div className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/60 flex items-center gap-4 hover:border-red-500/20 transition-all">
+                <div className="p-2.5 bg-orange-500/10 border border-orange-500/20 text-orange-400 rounded-lg shrink-0">
+                  <MapPin className="w-5 h-5 text-orange-400" />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-zinc-500 font-mono uppercase">Coordinates</p>
@@ -226,7 +226,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Name field */}
               <div className="space-y-1.5">
                 <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-400 font-mono">
-                  Your Full Name <span className="text-blue-500 font-bold">*</span>
+                  Your Full Name <span className="text-red-500 font-bold">*</span>
                 </label>
                 <input
                   type="text"
@@ -234,8 +234,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${
-                    errors.name ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-blue-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all ${
+                    errors.name ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-red-500"
                   }`}
                   placeholder="Guruprasad G"
                 />
@@ -249,7 +249,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Email field */}
               <div className="space-y-1.5">
                 <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-400 font-mono">
-                  Your Email Address <span className="text-blue-500 font-bold">*</span>
+                  Your Email Address <span className="text-red-500 font-bold">*</span>
                 </label>
                 <input
                   type="email"
@@ -257,8 +257,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${
-                    errors.email ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-blue-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all ${
+                    errors.email ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-red-500"
                   }`}
                   placeholder="recruiter@company.com"
                 />
@@ -272,7 +272,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Subject field */}
               <div className="space-y-1.5">
                 <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-400 font-mono">
-                  Subject <span className="text-blue-500 font-bold">*</span>
+                  Subject <span className="text-red-500 font-bold">*</span>
                 </label>
                 <input
                   type="text"
@@ -280,8 +280,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${
-                    errors.subject ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-blue-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all ${
+                    errors.subject ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-red-500"
                   }`}
                   placeholder="Opportunity: Web Developer Role"
                 />
@@ -295,7 +295,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               {/* Message field */}
               <div className="space-y-1.5">
                 <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-400 font-mono">
-                  Detailed Message <span className="text-blue-500 font-bold">*</span>
+                  Detailed Message <span className="text-red-500 font-bold">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -303,8 +303,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none ${
-                    errors.message ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-blue-500"
+                  className={`w-full px-4 py-3.5 rounded-xl border bg-white/50 dark:bg-zinc-950/50 text-zinc-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all resize-none ${
+                    errors.message ? "border-red-500/50 focus:ring-red-500/20" : "border-zinc-200 dark:border-zinc-800/80 focus:border-red-500"
                   }`}
                   placeholder="Hello Guruprasad, we viewed your portfolio and are highly impressed with..."
                 />
@@ -319,7 +319,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 px-6 rounded-xl bg-blue-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(59,130,246,0.3)] hover:bg-blue-500 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                className="w-full py-4 px-6 rounded-xl bg-red-600 text-white font-bold tracking-wider text-xs uppercase flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(239,68,68,0.3)] hover:bg-red-500 transition-all disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >

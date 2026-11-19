@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import ThemeToggle from "../ui/ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "#hero" },
+  { name: "Projects", href: "#projects" },
   { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" }
 ];
 
@@ -72,7 +72,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Scroll Progress Bar */}
-      <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-blue-500 to-cyan-400 z-50 transition-all duration-75" style={{ width: `${scrollProgress}%` }} />
+      <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-red-500 to-orange-400 z-50 transition-all duration-75" style={{ width: `${scrollProgress}%` }} />
 
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -84,12 +84,12 @@ export default function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center group-hover:border-blue-500/50 transition-all duration-300">
-            <span className="text-white text-base font-extrabold tracking-wider font-sans group-hover:text-blue-400 transition-colors">
+          <div className="w-9 h-9 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center group-hover:border-red-500/50 transition-all duration-300">
+            <span className="text-white text-base font-extrabold tracking-wider font-sans group-hover:text-red-400 transition-colors">
               G
             </span>
           </div>
-          <span className="text-sm font-bold tracking-wider text-zinc-900 dark:text-white uppercase group-hover:text-blue-400 transition-colors">
+          <span className="text-sm font-bold tracking-wider text-zinc-900 dark:text-white uppercase group-hover:text-red-400 transition-colors">
             Guruprasad G
           </span>
         </a>
@@ -111,7 +111,7 @@ export default function Navbar() {
                 {isTargetActive && (
                   <motion.span
                     layoutId="activeNavTab"
-                    className="absolute inset-0 bg-blue-600 rounded-full shadow-[0_2px_10px_rgba(59,130,246,0.4)]"
+                    className="absolute inset-0 bg-red-600 rounded-full shadow-[0_2px_10px_rgba(239,68,68,0.4)]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -123,10 +123,9 @@ export default function Navbar() {
 
         {/* Right Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
           <motion.a
             href="#contact"
-            className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-white bg-zinc-900 dark:bg-zinc-800/60 hover:bg-blue-600 dark:hover:bg-blue-600 border border-zinc-200/10 dark:border-zinc-800/80 rounded-xl flex items-center gap-1.5 group transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_20px_rgba(59,130,246,0.3)]"
+            className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-white bg-zinc-900 dark:bg-zinc-800/60 hover:bg-red-600 dark:hover:bg-red-600 border border-zinc-200/10 dark:border-zinc-800/80 rounded-xl flex items-center gap-1.5 group transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_20px_rgba(239,68,68,0.3)]"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -137,7 +136,6 @@ export default function Navbar() {
 
         {/* Mobile Menu Controls */}
         <div className="flex md:hidden items-center gap-3">
-          <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2.5 rounded-xl border border-zinc-200/10 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40 backdrop-blur-md text-zinc-600 dark:text-zinc-400"
@@ -184,12 +182,12 @@ export default function Navbar() {
                     }}
                     className={`py-3.5 px-5 rounded-2xl text-base font-bold tracking-wider uppercase transition-all flex items-center justify-between ${
                       isTargetActive
-                        ? "bg-blue-600/20 text-blue-400 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+                        ? "bg-red-600/20 text-red-400 border border-red-500/30 shadow-[0_0_15px_rgba(239,68,68,0.15)]"
                         : "text-zinc-400 hover:text-white bg-zinc-900/40 border border-zinc-800/40"
                     }`}
                   >
                     <span>{link.name}</span>
-                    <div className={`w-2 h-2 rounded-full ${isTargetActive ? "bg-blue-400 shadow-[0_0_8px_#60A5FA]" : "bg-zinc-800"}`} />
+                    <div className={`w-2 h-2 rounded-full ${isTargetActive ? "bg-red-400 shadow-[0_0_8px_#60A5FA]" : "bg-zinc-800"}`} />
                   </a>
                 );
               })}
@@ -211,7 +209,7 @@ export default function Navbar() {
                     });
                   }
                 }}
-                className="mt-6 py-4 text-center text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-500 rounded-2xl flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(59,130,246,0.3)] transition-all"
+                className="mt-6 py-4 text-center text-xs font-bold uppercase tracking-widest text-white bg-red-600 hover:bg-red-500 rounded-2xl flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(239,68,68,0.3)] transition-all"
                 whileTap={{ scale: 0.98 }}
               >
                 Hire Me

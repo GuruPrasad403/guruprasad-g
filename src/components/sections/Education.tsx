@@ -20,8 +20,8 @@ export default function Education() {
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Section Header */}
         <div>
-          <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
-            [ 06 / ACADEMICS & HACKATHONS ]
+          <span className="text-xs font-bold font-mono tracking-widest text-red-500 uppercase block mb-3">
+            [ 08 / ACADEMICS & HACKATHONS ]
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
             Education &amp; Hackathon Achievements
@@ -37,8 +37,8 @@ export default function Education() {
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200/50 dark:border-zinc-800/50">
             <div className="flex items-start gap-4">
-              <div className="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 shrink-0">
-                <GraduationCap className="w-6 h-6 text-blue-400" />
+              <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 shrink-0">
+                <GraduationCap className="w-6 h-6 text-red-400" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white leading-tight">
@@ -51,16 +51,16 @@ export default function Education() {
             </div>
 
             <div className="px-3.5 py-1.5 rounded-xl bg-zinc-200/60 dark:bg-zinc-800/60 border border-zinc-200/10 dark:border-zinc-700/50 flex items-center gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-400 shrink-0 w-fit">
-              <Calendar className="w-4 h-4 text-blue-500" />
+              <Calendar className="w-4 h-4 text-red-500" />
               {portfolioData.education.period}
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Concurrent Work */}
-            <div className="p-5 rounded-xl bg-blue-500/5 border border-blue-500/15 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold font-mono text-blue-400 uppercase tracking-wider">
-                <Briefcase className="w-4 h-4 text-blue-400" />
+            <div className="p-5 rounded-xl bg-red-500/5 border border-red-500/15 space-y-2">
+              <div className="flex items-center gap-2 text-xs font-bold font-mono text-red-400 uppercase tracking-wider">
+                <Briefcase className="w-4 h-4 text-red-400" />
                 <span>Concurrent Professional Career</span>
               </div>
               <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed">
@@ -69,9 +69,9 @@ export default function Education() {
             </div>
 
             {/* Event Coordination */}
-            <div className="p-5 rounded-xl bg-cyan-500/5 border border-cyan-500/15 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold font-mono text-cyan-400 uppercase tracking-wider">
-                <Users className="w-4 h-4 text-cyan-400" />
+            <div className="p-5 rounded-xl bg-orange-500/5 border border-orange-500/15 space-y-2">
+              <div className="flex items-center gap-2 text-xs font-bold font-mono text-orange-400 uppercase tracking-wider">
+                <Users className="w-4 h-4 text-orange-400" />
                 <span>Event Coordination &amp; Leadership</span>
               </div>
               <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed">
@@ -97,7 +97,7 @@ export default function Education() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5 }}
-                className="p-6 rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md flex flex-col justify-between space-y-4 hover:border-blue-500/30 transition-all duration-300 group"
+                className="p-6 rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md flex flex-col justify-between space-y-4 hover:border-red-500/30 transition-all duration-300 group"
               >
                 <div className="space-y-3">
                   {/* Photo thumbnail if present */}
@@ -119,10 +119,10 @@ export default function Education() {
                   )}
 
                   <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-blue-400 block font-bold">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-red-400 block font-bold">
                       {hack.location}
                     </span>
-                    <h4 className="text-base font-bold text-zinc-900 dark:text-white leading-snug group-hover:text-blue-400 transition-colors">
+                    <h4 className="text-base font-bold text-zinc-900 dark:text-white leading-snug group-hover:text-red-400 transition-colors">
                       {hack.title}
                     </h4>
                   </div>
@@ -152,7 +152,7 @@ export default function Education() {
                       href={hack.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto px-3 py-2 rounded-lg bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white border border-blue-500/20 text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all"
+                      className="w-full sm:w-auto px-3 py-2 rounded-lg bg-red-600/10 hover:bg-red-600 text-red-400 hover:text-white border border-red-500/20 text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all"
                     >
                       <Video className="w-3.5 h-3.5" />
                       Watch Video Demo

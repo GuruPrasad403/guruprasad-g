@@ -58,6 +58,7 @@ export interface Education {
 export const portfolioData = {
   personalInfo: {
     name: "Guruprasad G",
+    headline: "React Developer | Full-Stack JavaScript Developer (MERN)",
     title: "Web Developer Trainee",
     company: "Indegene Limited",
     email: "guruprasas27@gmail.com",
@@ -153,6 +154,22 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "banner-tool",
+      title: "Banner Validator & Screenshot Tool",
+      description: "A web tool that validates banner dimensions and sections, then auto-captures screenshots while scrolling the ISI content.",
+      longDescription: "The Banner Validator & Screenshot Tool checks banner creatives across standard sizes (300×250, 320×480, 728×90, 300×600 and custom), verifies dimensions and sections, plays slide animations first with the ISI pinned, and automatically captures slide frames and scrolling ISI screenshots at 2x scale. Built for fast, repeatable banner QA.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      techStack: ["JavaScript", "Node.js", "Express", "Puppeteer", "HTML5/CSS3"],
+      features: [
+        "Validates banner dimensions and sections across standard and custom sizes",
+        "Auto-captures slide frames (one per slide) above ISI scroll frames",
+        "Slides play fully first with the ISI pinned, then freeze on slide 1 for ISI capture",
+        "Screenshots captured at 2x scale for crisp QA review"
+      ],
+      githubUrl: "https://github.com/GuruPrasad403/banner-tool",
+      liveUrl: "https://banner-tool-cs7k.onrender.com"
+    },
+    {
       id: "second-brain",
       title: "Second Brain – AI PWA",
       description: "A full-stack progressive web application for saving, organizing, and semantically searching documents using NLP techniques.",
@@ -201,6 +218,103 @@ export const portfolioData = {
       liveUrl: "#"
     }
   ] as Project[],
+
+  aemProjects: [
+    {
+      id: "aem-tagrisso-hcp",
+      title: "Tagrisso HCP",
+      domain: "tagrissohcp.com",
+      url: "https://tagrissohcp.com",
+      description: "AEM HCP portal for oncology healthcare professionals — component and page work."
+    },
+    {
+      id: "aem-tagrisso",
+      title: "Tagrisso",
+      domain: "tagrisso.com",
+      url: "https://tagrisso.com",
+      description: "AEM brand site for the Tagrisso oncology brand — page builds and component updates."
+    },
+    {
+      id: "aem-her2know",
+      title: "HER2 Know",
+      domain: "her2know.com",
+      url: "https://her2know.com",
+      description: "AEM site on HER2-positive cancer awareness — component and content-page work."
+    },
+    {
+      id: "aem-pioneers-breast",
+      title: "Pioneers in Breast Cancer",
+      domain: "pionnersinbrestcancer.com",
+      url: "https://pionnersinbrestcancer.com",
+      description: "AEM site on breast cancer education — page and component work."
+    },
+    {
+      id: "aem-pioneers-lung",
+      title: "Pioneers in Lung Cancer",
+      domain: "pionnersinlungcancer.com",
+      url: "https://pionnersinlungcancer.com",
+      description: "AEM site on lung cancer education — page and component work."
+    },
+    {
+      id: "aem-splash",
+      title: "Other Splash Pages",
+      domain: "",
+      url: "",
+      description: "Additional AEM splash and campaign landing pages built for oncology brand campaigns."
+    }
+  ],
+
+  services: [
+    {
+      id: "svc-business",
+      name: "Business Website",
+      price: "From ₹7,999",
+      tagline: "A clean, fast website that puts your business on the map.",
+      features: ["Up to 5 pages", "Mobile-first responsive design", "Contact form & WhatsApp button", "Basic SEO setup", "Delivered in 7 days"]
+    },
+    {
+      id: "svc-standard",
+      name: "Standard Website",
+      price: "₹14,999",
+      tagline: "More pages, richer sections and a polished brand feel.",
+      features: ["Up to 10 pages", "Custom sections & animations", "Gallery / menu / catalogue pages", "Google Maps & social links", "Delivered in 10 days"],
+      popular: true
+    },
+    {
+      id: "svc-booking",
+      name: "Website with Ordering / Booking",
+      price: "₹24,999",
+      tagline: "Take orders and bookings directly from your website.",
+      features: ["Online ordering or booking flow", "Admin-friendly updates", "Payment-ready structure", "Customer enquiry notifications", "Delivered in 14 days"]
+    },
+    {
+      id: "svc-react",
+      name: "React Frontend Development",
+      price: "Custom quote",
+      tagline: "Modern, reusable React interfaces built with TypeScript and Tailwind.",
+      features: ["Component-driven UI", "REST API integration", "Responsive & accessible", "Performance-focused builds"]
+    },
+    {
+      id: "svc-mern",
+      name: "Full MERN Web App",
+      price: "Custom quote",
+      tagline: "End-to-end web apps — React, Node, Express and MongoDB.",
+      features: ["Frontend + backend + database", "JWT authentication", "REST APIs", "Deployment support"]
+    },
+    {
+      id: "svc-aem",
+      name: "AEM Components",
+      price: "Custom quote",
+      tagline: "Adobe Experience Manager components and page builds for enterprise teams.",
+      features: ["Reusable AEM components", "HCP portal & brand site pages", "Splash / campaign pages", "CMS workflow friendly"]
+    }
+  ],
+
+  techStack: [
+    "JavaScript", "TypeScript", "React", "Node.js", "Express", "MongoDB",
+    "Tailwind CSS", "HTML5", "CSS3", "REST APIs", "JWT", "AEM",
+    "Git & GitHub", "GitHub Copilot", "GenAI & NLP"
+  ],
 
   certifications: [
     {

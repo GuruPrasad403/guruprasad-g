@@ -69,8 +69,8 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           transition={{ duration: 0.6, ease: [0.6, 0.01, -0.05, 0.95] }}
         >
           {/* Ambient Glows */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-cyan-500/5 rounded-full blur-[70px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-red-500/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-orange-500/5 rounded-full blur-[70px] pointer-events-none" />
 
           {/* Central Logo Monogram Container */}
           <div className="relative mb-12 flex items-center justify-center">
@@ -82,7 +82,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             >
               {/* Inner animated border glow */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-500/20 opacity-0"
+                className="absolute inset-0 bg-gradient-to-tr from-red-500/20 to-orange-500/20 opacity-0"
                 animate={{ opacity: [0.2, 0.6, 0.2] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -94,7 +94,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
             {/* Orbiting Ring */}
             <motion.div
-              className="absolute w-24 h-24 border border-dashed border-blue-500/30 rounded-full"
+              className="absolute w-24 h-24 border border-dashed border-red-500/30 rounded-full"
               animate={{ rotate: 360 }}
               transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
             />
@@ -128,7 +128,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             {/* Outer Progress bar */}
             <div className="w-full h-[3px] bg-zinc-900 rounded-full overflow-hidden relative border border-zinc-800/20">
               <motion.div
-                className="h-full bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+                className="h-full bg-gradient-to-r from-red-500 via-orange-400 to-red-600 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.5)]"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: "easeOut" }}
               />

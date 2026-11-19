@@ -10,8 +10,8 @@ export default function Skills() {
   });
 
   const getCategoryIcon = (category: string) => {
-    if (category.toLowerCase().includes("frontend")) return <Code className="w-5 h-5 text-blue-400" />;
-    if (category.toLowerCase().includes("backend")) return <Server className="w-5 h-5 text-cyan-400" />;
+    if (category.toLowerCase().includes("frontend")) return <Code className="w-5 h-5 text-red-400" />;
+    if (category.toLowerCase().includes("backend")) return <Server className="w-5 h-5 text-orange-400" />;
     return <Wrench className="w-5 h-5 text-emerald-400" />;
   };
 
@@ -42,11 +42,11 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
-            [ 02 / EXPERTISE ]
+          <span className="text-xs font-bold font-mono tracking-widest text-red-500 uppercase block mb-3">
+            [ 04 / EXPERTISE ]
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-white">
-            Technical Arsenal
+            Technical Skills
           </h2>
         </div>
 
@@ -61,7 +61,7 @@ export default function Skills() {
             <motion.div
               key={group.category}
               variants={cardVariants}
-              className="p-6 rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative group overflow-hidden hover:border-blue-500/20 dark:hover:border-blue-500/20 transition-all duration-300"
+              className="p-6 rounded-2xl bg-zinc-100/40 dark:bg-zinc-900/30 border border-zinc-200/10 dark:border-zinc-800/80 backdrop-blur-md relative group overflow-hidden hover:border-red-500/20 dark:hover:border-red-500/20 transition-all duration-300"
             >
               {/* Card Header */}
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-zinc-200/50 dark:border-zinc-800/50">
@@ -89,7 +89,7 @@ export default function Skills() {
                     {/* Progress Track */}
                     <div className="w-full h-1.5 bg-zinc-200 dark:bg-zinc-950 rounded-full overflow-hidden relative">
                       <motion.div
-                        className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.2)]"
+                        className="h-full bg-gradient-to-r from-red-500 to-orange-400 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.2)]"
                         initial={{ width: 0 }}
                         animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
                         transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
